@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: bizcenter
+  pool: 5
+  username: jfp3
+  password: 

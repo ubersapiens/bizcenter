@@ -1,0 +1,28 @@
+<%= form_for(@office) do |f| %>
+<div>
+    <%= f.label :title_of_offer %>
+    <%= f.text_area :title_of_offer %>
+</div>
+<div>
+    <%= f.label :meters_squared %>
+    <%= f.text_field :meters_squared %>
+</div>
+<div>
+    <%= f.label :cost_per_month %>
+    <%= f.text_field :cost_per_month %>
+</div>
+<div>
+    <%= f.label :number_of_people %>
+    <%= f.text_field :number_of_people %>
+</div>
+<div>
+    <%= f.label :full_street_address %>
+    <%= f.text_field :full_street_address %>
+</div>
+<div>
+    <%= f.file_field :image %>
+</div>
+<div>
+    <%= f.submit %>
+</div>
+<% end %>

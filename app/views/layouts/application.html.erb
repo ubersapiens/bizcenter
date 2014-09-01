@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%= content_for?(:title) ? yield(:title) : "Centre d'Affaires" %></title>
+        <meta name="description" content="Centre d'Affaires">
+        <meta name="author" content="OCP Finance">
+        <%= stylesheet_link_tag "application", :media => "all", "data-turbolinks-track" => true  %>
+        <%= javascript_include_tag "application", "data-turbolinks-track" => true  %>
+        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <%= csrf_meta_tag %>
+        <%= yield(:head) %>
+    </head>
+    <body>
+        <%= render 'layouts/navigation' %>
+            <%= yield %>
+        <%= render 'layouts/footer' %> 
+    </body>
+</html>

@@ -1,0 +1,6 @@
+<h1>Offices</h1>
+<ul>
+<% @offices.each do |o| %>
+	<li><%= link_to o.title_of_offer, office_path(o)%></li>
+<% end %>
+</ul>

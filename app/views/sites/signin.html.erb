@@ -1,0 +1,23 @@
+
+<div class="container form">
+    <h1>Inscription</h1>
+    <form accept-charset="UTF-8" action="/users" class="new_user" id="new_user" method="post">
+        <div class="form-group">
+            <label for="user_first_name">First name</label>
+            <input class="form-control" id="user_first_name" name="user[first_name]" type="text">
+        </div>
+        <div class="form-group">
+            <label for="user_last_name">Last name</label>
+            <input class="form-control" id="user_last_name" name="user[last_name]" type="text">
+        </div>
+        <div class="form-group">
+            <label for="user_email">Email</label>
+            <input class="form-control" id="user_email" name="user[email]" type="email">
+        </div>
+        <div class="form-group">
+            <label for="user_password">Password</label>
+            <input class="form-control" id="user_password" name="user[password]" type="password">
+        </div>
+        <input class="btn btn-default" id="btn-form" name="commit" type="submit" value="Register">
+    </form>
+</div>
