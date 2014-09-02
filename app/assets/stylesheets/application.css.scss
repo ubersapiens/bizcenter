@@ -27,6 +27,17 @@ body {
 	background-color:#fff;
 	border-color:#fff;
 
+	.navbar-brand {
+		img {
+			height: 70px;
+			width: auto;
+		}
+	}
+
+	.navbar-right {
+		padding-top: 13px;
+	}
+
 	.navbar-nav {
 		li {
 			padding: 10px;
