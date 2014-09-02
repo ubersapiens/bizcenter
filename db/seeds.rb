@@ -84,6 +84,3 @@ o71 = Office.create({ title_of_offer: 'Alac Etoile', full_street_address: '3 Rue
 o72 = Office.create({ title_of_offer: 'Mediavillage', full_street_address: '8 Rue Myrha, 75008, Paris', meters_squared: 0, cost_per_month: 0 })
 o73 = Office.create({ title_of_offer: 'Alpha Forum', full_street_address: '3 Rue Troyon, 75017, Paris', meters_squared: 12, cost_per_month: 1450 })
 o74 = Office.create({ title_of_offer: 'DAPI', full_street_address: '84 Quai de la Loire, 75019, Paris', meters_squared: 15, cost_per_month: 650 })
-
-
-# TESTING
