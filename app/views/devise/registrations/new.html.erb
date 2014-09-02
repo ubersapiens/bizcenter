@@ -1,18 +1,47 @@
-<h2>Sign up</h2>
+<div class="container form">
+	<h2>Inscription</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+	<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+	  	<%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+	  	<div class="form-group"><%= f.label :email %><br />
+	  		<%= f.email_field :email, autofocus: true %>
+	  	</div>
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+	  	<div class="form-group"><%= f.label :password %><br />
+	    	<%= f.password_field :password, autocomplete: "off" %>
+	    </div>
 
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+	  	<div class="form-group"><%= f.label :password_confirmation %><br />
+	    	<%= f.password_field :password_confirmation, autocomplete: "off" %>
+		</div>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+	  	<div class="btn btn-default" id="btn-form"><%= f.submit "Sign up" %></div>
+	<% end %>
+</div>
 
 <%= render "devise/shared/links" %>
+
+
+<!-- <div class="container form">
+    <h1>Inscription</h1>
+    <form accept-charset="UTF-8" action="/users" class="new_user" id="new_user" method="post">
+        <div class="form-group">
+            <label for="user_first_name">First name</label>
+            <input class="form-control" id="user_first_name" name="user[first_name]" type="text">
+        </div>
+        <div class="form-group">
+            <label for="user_last_name">Last name</label>
+            <input class="form-control" id="user_last_name" name="user[last_name]" type="text">
+        </div>
+        <div class="form-group">
+            <label for="user_email">Email</label>
+            <input class="form-control" id="user_email" name="user[email]" type="email">
+        </div>
+        <div class="form-group">
+            <label for="user_password">Password</label>
+            <input class="form-control" id="user_password" name="user[password]" type="password">
+        </div>
+        <input class="btn btn-default" id="btn-form" name="commit" type="submit" value="Register">
+    </form>
+</div> -->
