@@ -23,7 +23,6 @@ body {
 
 .navbar-default {
 	color: $orange;
-	margin-bottom:0px;
 	background-color:#fff;
 	border-color:#fff;
 
@@ -31,6 +30,7 @@ body {
 		img {
 			height: 70px;
 			width: auto;
+			padding-bottom: 10px;
 		}
 	}
 
@@ -40,7 +40,6 @@ body {
 
 	.navbar-nav {
 		li {
-			padding: 10px;
 			a {
 				color: $gray;
 				font-size:16px;
