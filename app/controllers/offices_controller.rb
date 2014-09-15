@@ -1,6 +1,6 @@
 class OfficesController < ApplicationController
     def index
-        @offices = Office.all
+        @offices = current_user.offices
 
         respond_to do |format|
             format.html
@@ -9,7 +9,7 @@ class OfficesController < ApplicationController
     end
 
     def new
-        @office = Office.new
+        @office = current_user.offices.build
 
         respond_to do |format|
             format.html
@@ -18,7 +18,7 @@ class OfficesController < ApplicationController
     end
 
     def create
-        @office = Office.new(office_params)
+        @office = current_user.offices.build(office_params)
 
         respond_to do |format|
             if @office.save 
@@ -50,7 +50,7 @@ class OfficesController < ApplicationController
     end
 
     def update
-        @office = Office.find(params[:id])
+        @office = current_user.offices.find(params[:id])
 
         respond_to do |format|
             if @office.update_attributes!(office_params)
@@ -64,7 +64,8 @@ class OfficesController < ApplicationController
     end
 
     def destroy
-        @office = Office.find(params[:id])
+        @office = current_user.offices.find(params[:id])
+
         @office.destroy
 
         respond_to do |format|
