@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140917113437) do
+ActiveRecord::Schema.define(version: 20140917154301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 20140917113437) do
     t.boolean  "receptionist"
     t.boolean  "shared_meeting_room"
     t.boolean  "paid_meeting_room"
-    t.boolean  "private_meetin_room"
+    t.boolean  "private_meeting_room"
     t.boolean  "access_24_7"
     t.boolean  "badge_access"
     t.boolean  "alarm"

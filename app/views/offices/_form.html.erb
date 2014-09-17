@@ -8,19 +8,283 @@
                     <h2>Creez un Centre d'Affaires</h2>
 
                     <div class="form-group">
-                        <%= f.text_field :title_of_offer, autofocus: true, :placeholder => "Title" %>
+                        <%= f.text_field :title_of_offer, autofocus: true, :placeholder => "Titre de votre offre" %>
                     </div>
 
                     <div class="form-group">
-                        <%= f.text_field :full_street_address, autofocus: true, :placeholder => "Address" %>
+                        <%= f.text_field :full_street_address, autofocus: true, :placeholder => "Addresse" %>
                     </div>
 
                     <div class="form-group">
-                        <%= f.text_field :meters_squared, autofocus: true, :placeholder => "Size (in m2)" %>
+                        <%= f.text_field :meters_squared, autofocus: true, :placeholder => "Surface (m²)" %>
                     </div>
 
                     <div class="form-group">
-                        <%= f.text_field :cost_per_month, autofocus: true, :placeholder => "Cost per month" %>
+                        <%= f.text_field :cost_per_month, autofocus: true, :placeholder => "Tarif mensuel" %>
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.text_field :office_description, autofocus: true, :placeholder => "Description du space" %>
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.text_field :entry_fee, autofocus: true, :placeholder => "Frais d'entreé" %>
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Dépôt de garantie" %>
+                        <%= f.select(:guarantee_deposit, options_for_select([['Aucun', 1], ['1 Mois', 2], ['2 Mois', 3], ['3 Mois', 4], ['4 Mois', 5], ['5 Mois', 6], ['6 Mois', 7], ['7 Mois', 8], ['8 Mois', 9], ['9 Mois', 10], ['10 Mois', 11], ['11 Mois', 12], ['12 Mois', 13]]))  %>
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Type de contrat" %>
+                        <%= f.select(:type_of_contract, options_for_select([['Prestation de services', 1], ['Souslocation', 2], ['Bail précaire', 3], ['Bail 3/6/9', 4], ['Autre', 5]]))  %>
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Disponible à partir du" %>
+                        <%= f.date_field :availability %>
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Pour une durée minimale de" %>
+                        <%= f.select(:min_duration, options_for_select([['1 Mois', 1], ['2 Mois', 2], ['3 Mois', 3], ['4 Mois', 4], ['5 Mois', 5], ['5 Mois', 6], ['6 Mois', 7], ['9 Mois', 8], ['12 Mois', 9], ['18 Mois', 10], ['24 Mois', 11], ['3 Ans', 12]]))  %>
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Et une durée maximale de" %>
+                        <%= f.select(:min_duration, options_for_select([['1 Mois', 1], ['2 Mois', 2], ['3 Mois', 3], ['4 Mois', 4], ['5 Mois', 5], ['5 Mois', 6], ['6 Mois', 7], ['9 Mois', 8], ['12 Mois', 9], ['18 Mois', 10], ['24 Mois', 11], ['3 Ans', 12], ['Infini', 13]]))  %>
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.text_field :floor_number, autofocus: true, :placeholder => "Etage dans l'immeuble (rdc='0')" %>
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Ascenseur" %>
+                        <%= f.select(:has_elevator, options_for_select([['Sans', 1], ['Avec', 2]]))  %>
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Lumière" %>
+                        <%= f.select(:type_of_lighting, options_for_select([['Naturelle', 1], ['Indirecte', 2], ['Artificielle', 3]]))  %>
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Type" %>
+                        <%= f.select(:type_of_office_space, options_for_select([['Bureaux', 1], ['Loft/Atelier', 2], ['Boutique', 3], ['Hôtel particulier', 4], ['Immeuble', 5], ['Locale commerciale', 6], ['Bureau & Hôtel d\'enterprise', 7], ['Incubateur & Pépinière', 8], ['Coworking & Bureau flexible', 9], ['Autre', 10]]))  %>
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Style" %>
+                        <%= f.select(:office_style, options_for_select([['Neutre', 1], ['Standing', 2], ['Corporate', 3], ['Design', 4], ['Atypique', 5], ['Autre', 6]]))  %>
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Accès serveur" %>
+                        <%= f.check_box :server_access %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "ADSL" %>
+                        <%= f.check_box :adsl %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Câblage RJ45" %>
+                        <%= f.check_box :rj45_cable %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Réseau dédié" %> <br />
+                        <%= f.check_box :dedicated_network %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "WiFi" %> <br />
+                        <%= f.check_box :wifi %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Accès handicapés" %> <br />
+                        <%= f.check_box :handicap_access %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Climatisation" %> <br />
+                        <%= f.check_box :air_conditioning %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Cafétéria" %> <br />
+                        <%= f.check_box :cafeteria %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Cuisine" %> <br />
+                        <%= f.check_box :kitchen %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Espace d'attente" %> <br />
+                        <%= f.check_box :waiting_room %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Espace détente" %> <br />
+                        <%= f.check_box :relaxation_room %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Ménage" %> <br />
+                        <%= f.check_box :cleaning_services %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Salle à manger" %> <br />
+                        <%= f.check_box :eating_room %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Coin stockage" %> <br />
+                        <%= f.check_box :storage %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Ecran TV" %> <br />
+                        <%= f.check_box :television %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Fax" %> <br />
+                        <%= f.check_box :fax %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Imprimante" %> <br />
+                        <%= f.check_box :printer %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Photocopieur" %> <br />
+                        <%= f.check_box :copy_machine %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Rangements individuels" %> <br />
+                        <%= f.check_box :individual_cupboard %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Scanner" %> <br />
+                        <%= f.check_box :scanner %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Tables/chaisses" %> <br />
+                        <%= f.check_box :tables_and_chairs %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Téléphone" %> <br />
+                        <%= f.check_box :telephone %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Vidéoprojecteur" %> <br />
+                        <%= f.check_box :projector %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Assistante partagée" %> <br />
+                        <%= f.check_box :shared_assistant %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Domiciliation" %> <br />
+                        <%= f.check_box :domiciliation %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Parking gratuit" %> <br />
+                        <%= f.check_box :free_parking %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Parking payant" %> <br />
+                        <%= f.check_box :paid_parking %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Réception courrier" %> <br />
+                        <%= f.check_box :mail_reception %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Réceptionniste" %> <br />
+                        <%= f.check_box :receptionist %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Salle de réunion partagée" %> <br />
+                        <%= f.check_box :shared_meeting_room %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Salle de réunion payante" %> <br />
+                        <%= f.check_box :paid_meeting_room %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Salle de réunion privée" %> <br />
+                        <%= f.check_box :private_meeting_room %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Accès 24/7" %> <br />
+                        <%= f.check_box :access_24_7 %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Accès par badge" %> <br />
+                        <%= f.check_box :badge_access %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Alarme" %> <br />
+                        <%= f.check_box :alarm %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Casier fermé" %> <br />
+                        <%= f.check_box :lockers %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Entrée indépendante" %> <br />
+                        <%= f.check_box :independent_entrance %> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.text_field :company_name, autofocus: true, :placeholder => "Nom de l'entité" %>
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Vous êtes" %>
+                        <%= f.select(:type_of_company, options_for_select([['Une entreprise', 1], ['Espace de coworking', 2], ['Centre d\'affaires', 3], ['Pépinière ou incubateur', 4], ['Une agence immobilière', 5], ['Autre', 6]]))  %>
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label "Activité" %>
+                        <%= f.select(:company_activity, options_for_select([['Autre', 1], ['Internet/High Tech', 2], ['Marketing/Communication', 3], ['Comptabilité', 4], ['Conseil', 5], ['Finance', 6], ['Architecte', 7], ['Média/Production', 8], ['Avocats', 9], ['Médical/Para médical', 10], ['Art/Design', 11], ['Distribution/Commerce', 12], ['Journalisme', 13], ['Associations', 14]]))  %>
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.text_field :company_website, autofocus: true, :placeholder => "Site internet" %>
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.text_field :company_description, autofocus: true, :placeholder => "Décrivez son activité" %>
                     </div>
 
                     <div class="form-group">
