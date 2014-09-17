@@ -1,3 +1,22 @@
-<h1>Offre: <%= @office.title_of_offer %></h1>
-<p><%= image_tag @office.image_url.to_s %></p>
-
+<div class="container office">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8">
+				<h1>Offre: <%= @office.title_of_offer %></h1>
+				<p>Addresse: <%= @office.full_street_address %></p>
+			</div>
+			<div class="col-lg-4">
+				<p><%= @office.cost_per_month %> Euros</p>
+				<p>Superficie: <%= @office.meters_squared %></p>
+			</div>
+		</div>
+		<div class="row">
+            <div class="col-lg-8">
+				<p><%= image_tag @office.image_url.to_s %></p>
+			</div>
+			<div class="col-lg-4">
+				<p><img src="/assets/map.png"></p>
+			</div>
+		</div>
+	</div>
+</div>

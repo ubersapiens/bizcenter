@@ -1,6 +1,14 @@
-<h1>Offices</h1>
-<ul>
-<% @offices.each do |o| %>
-	<li><%= link_to o.title_of_offer, office_path(o)%></li>
-<% end %>
-</ul>
+<div class="container form">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+				<h1><%= @current_user.first_name %>'s listings</h1>
+				<ul>
+				<% @offices.each do |o| %>
+					<li><%= link_to o.title_of_offer, office_path(o)%></li>
+				<% end %>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
