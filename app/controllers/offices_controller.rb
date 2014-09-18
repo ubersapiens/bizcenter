@@ -32,7 +32,7 @@ class OfficesController < ApplicationController
     end
 
     def show
-        @office = Office.find(params[:id])
+        @office = current_user.offices.find(params[:id])
 
         respond_to do |format|
             format.html
@@ -41,7 +41,7 @@ class OfficesController < ApplicationController
     end
 
     def edit
-        @office = Office.find(params[:id])
+        @office = current_user.offices.find(params[:id])
 
         respond_to do |format|
             format.html

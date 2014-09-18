@@ -2,20 +2,84 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-8">
-				<h1>Offre: <%= @office.title_of_offer %></h1>
-				<p>Addresse: <%= @office.full_street_address %></p>
+				<h1><%= @office.title_of_offer %></h1>
+				<p><%= @office.full_street_address %></p>
 			</div>
 			<div class="col-lg-4">
-				<p><%= @office.cost_per_month %> Euros</p>
-				<p>Superficie: <%= @office.meters_squared %></p>
+				<p><%= @office.cost_per_month.to_i  %> <i class="fa fa-eur"></i></p>
+				<p><%= @office.meters_squared.to_i %> m²</p>
+				<p><i class="fa fa-users"></i> <%= @office.number_of_people %></p>
+
 			</div>
 		</div>
 		<div class="row">
             <div class="col-lg-8">
-				<p><%= image_tag @office.image_url.to_s %></p>
+				<p><%= image_tag @office.image_url.to_s, :id => "office_main_image" %></p>
 			</div>
 			<div class="col-lg-4">
-				<p><img src="/assets/map.png"></p>
+			</div>
+		</div>
+		<div class="row">
+            <div class="col-lg-8">
+				<ul>
+					<li><%= @office.office_description %></li>
+					<li><%= @office.entry_fee %></li>
+					<li><%= @office.guarantee_deposit %></li>
+					<li><%= @office.type_of_contract %></li>
+					<li><%= @office.availability %></li>
+					<li><%= @office.min_duration %></li>
+					<li><%= @office.max_duration %></li>
+					<li><%= @office.floor_number %></li>
+					<li><%= @office.has_elevator %></li>
+					<li><%= @office.type_of_lighting %></li>
+					<li><%= @office.type_of_office_space %></li>
+					<li><%= @office.office_style %></li>
+					<li><%= @office.server_access %></li>
+					<li><%= @office.adsl %></li>
+					<li><%= @office.rj45_cable %></li>
+					<li><%= @office.fibre_optic %></li>
+					<li><%= @office.wifi %></li>
+					<li><%= @office.handicap_access %></li>
+					<li><%= @office.air_conditioning %></li>
+					<li><%= @office.cafeteria %></li>
+					<li><%= @office.kitchen %></li>
+					<li><%= @office.relaxation_room %></li>
+					<li><%= @office.waiting_room %></li>
+					<li><%= @office.cleaning_services %></li>
+					<li><%= @office.eating_room %></li>
+					<li><%= @office.storage %></li>
+					<li><%= @office.television %></li>
+					<li><%= @office.fax %></li>
+					<li><%= @office.printer %></li>
+					<li><%= @office.copy_machine %></li>
+					<li><%= @office.individual_cupboard %></li>
+					<li><%= @office.scanner %></li>
+					<li><%= @office.tables_and_chairs %></li>
+					<li><%= @office.telephone %></li>
+					<li><%= @office.projector %></li>
+					<li><%= @office.shared_assistant %></li>
+					<li><%= @office.domiciliation %></li>
+					<li><%= @office.free_parking %></li>
+					<li><%= @office.paid_parking %></li>
+					<li><%= @office.mail_reception %></li>
+					<li><%= @office.receptionist %></li>
+					<li><%= @office.shared_meeting_room %></li>
+					<li><%= @office.paid_meeting_room %></li>
+					<li><%= @office.private_meeting_room %></li>
+					<li><%= @office.access_24_7 %></li>
+					<li><%= @office.badge_access %></li>
+					<li><%= @office.alarm %></li>
+					<li><%= @office.lockers %></li>
+					<li><%= @office.independent_entrance %></li>
+					<li><%= @office.company_name %></li>
+					<li><%= @office.type_of_company %></li>
+					<li><%= @office.company_activity %></li>
+					<li><%= @office.company_status %></li>
+					<li><%= @office.company_website %></li>
+					<li><%= @office.company_description %></li>
+				</ul>
+			</div>
+			<div class="col-lg-4">
 			</div>
 		</div>
 	</div>
