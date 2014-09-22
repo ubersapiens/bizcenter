@@ -37,12 +37,12 @@
 
                     <div class="form-group">
                         <%= f.label "Dépôt de garantie" %>
-                        <%= f.select(:guarantee_deposit, options_for_select([['Aucun', 1], ['1 Mois', 2], ['2 Mois', 3], ['3 Mois', 4], ['4 Mois', 5], ['5 Mois', 6], ['6 Mois', 7], ['7 Mois', 8], ['8 Mois', 9], ['9 Mois', 10], ['10 Mois', 11], ['11 Mois', 12], ['12 Mois', 13]]))  %>
+                        <%= f.select(:guarantee_deposit, options_for_select(Office::GUARANTEE_DEPOSITS.map.with_index { |name, index| [ name, index ] } )) %>
                     </div>
 
                     <div class="form-group">
                         <%= f.label "Type de contrat" %>
-                        <%= f.select(:type_of_contract, options_for_select([['Prestation de services', 1], ['Souslocation', 2], ['Bail précaire', 3], ['Bail 3/6/9', 4], ['Autre', 5]]))  %>
+                        <%= f.select(:type_of_contract, options_for_select(Office::TYPE_OF_CONTRACTS.map.with_index { |name, index| [ name, index ] } )) %>
                     </div>
 
                     <div class="form-group">
@@ -52,12 +52,12 @@
 
                     <div class="form-group">
                         <%= f.label "Pour une durée minimale de" %>
-                        <%= f.select(:min_duration, options_for_select([['1 Mois', 1], ['2 Mois', 2], ['3 Mois', 3], ['4 Mois', 4], ['5 Mois', 5], ['5 Mois', 6], ['6 Mois', 7], ['9 Mois', 8], ['12 Mois', 9], ['18 Mois', 10], ['24 Mois', 11], ['3 Ans', 12]]))  %>
+                        <%= f.select(:min_duration, options_for_select(Office::MIN_DURATIONS.map.with_index { |name, index| [ name, index ] } )) %>
                     </div>
 
                     <div class="form-group">
                         <%= f.label "Et une durée maximale de" %>
-                        <%= f.select(:min_duration, options_for_select([['1 Mois', 1], ['2 Mois', 2], ['3 Mois', 3], ['4 Mois', 4], ['5 Mois', 5], ['5 Mois', 6], ['6 Mois', 7], ['9 Mois', 8], ['12 Mois', 9], ['18 Mois', 10], ['24 Mois', 11], ['3 Ans', 12], ['Infini', 13]]))  %>
+                        <%= f.select(:max_duration, options_for_select(Office::MAX_DURATIONS.map.with_index { |name, index| [ name, index ] } )) %>
                     </div>
 
                     <div class="form-group">
@@ -66,22 +66,22 @@
 
                     <div class="form-group">
                         <%= f.label "Ascenseur" %>
-                        <%= f.select(:has_elevator, options_for_select([['Sans', 1], ['Avec', 2]]))  %>
+                        <%= f.select(:has_elevator, options_for_select(Office::HAS_ELEVATORS.map.with_index { |name, index| [ name, index ] } )) %>
                     </div>
 
                     <div class="form-group">
                         <%= f.label "Lumière" %>
-                        <%= f.select(:type_of_lighting, options_for_select([['Naturelle', 1], ['Indirecte', 2], ['Artificielle', 3]]))  %>
+                        <%= f.select(:type_of_lighting, options_for_select(Office::TYPE_OF_LIGHTINGS.map.with_index { |name, index| [ name, index ] } )) %>
                     </div>
 
                     <div class="form-group">
                         <%= f.label "Type" %>
-                        <%= f.select(:type_of_office_space, options_for_select([['Bureaux', 1], ['Loft/Atelier', 2], ['Boutique', 3], ['Hôtel particulier', 4], ['Immeuble', 5], ['Locale commerciale', 6], ['Bureau & Hôtel d\'enterprise', 7], ['Incubateur & Pépinière', 8], ['Coworking & Bureau flexible', 9], ['Autre', 10]]))  %>
+                        <%= f.select(:type_of_office_space, options_for_select(Office::TYPE_OF_OFFICE_SPACES.map.with_index { |name, index| [ name, index ] } )) %>
                     </div>
 
                     <div class="form-group">
                         <%= f.label "Style" %>
-                        <%= f.select(:office_style, options_for_select([['Neutre', 1], ['Standing', 2], ['Corporate', 3], ['Design', 4], ['Atypique', 5], ['Autre', 6]]))  %>
+                        <%= f.select(:office_style, options_for_select(Office::OFFICE_STYLES.map.with_index { |name, index| [ name, index ] } )) %>
                     </div>
 
                     <div class="form-group">
@@ -275,12 +275,12 @@
 
                     <div class="form-group">
                         <%= f.label "Vous êtes" %>
-                        <%= f.select(:type_of_company, options_for_select([['Une entreprise', 1], ['Espace de coworking', 2], ['Centre d\'affaires', 3], ['Pépinière ou incubateur', 4], ['Une agence immobilière', 5], ['Autre', 6]]))  %>
+                        <%= f.select(:type_of_company, options_for_select(Office::TYPE_OF_COMPANIES.map.with_index { |name, index| [ name, index ] } )) %>
                     </div>
 
                     <div class="form-group">
                         <%= f.label "Activité" %>
-                        <%= f.select(:company_activity, options_for_select([['Autre', 1], ['Internet/High Tech', 2], ['Marketing/Communication', 3], ['Comptabilité', 4], ['Conseil', 5], ['Finance', 6], ['Architecte', 7], ['Média/Production', 8], ['Avocats', 9], ['Médical/Para médical', 10], ['Art/Design', 11], ['Distribution/Commerce', 12], ['Journalisme', 13], ['Associations', 14]]))  %>
+                        <%= f.select(:company_activity, options_for_select(Office::COMPANY_ACTIVITIES.map.with_index { |name, index| [ name, index ] } )) %>
                     </div>
 
                     <div class="form-group">
