@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" id="homepage-nav">
     <nav role="navigation" class="navbar navbar-default navbar-static-top">  
         <div class="navbar-header">
             <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
@@ -16,7 +16,7 @@
                 </li>
                 <% if current_user %>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.first_name %> <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bonjour <%= current_user.first_name %> <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="/edit">Mon Profil</a></li>
                             <li><a href="/offices">Mes Annonces</a></li>

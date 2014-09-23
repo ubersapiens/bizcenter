@@ -5,14 +5,38 @@
 /*          SIGNUP/LOGIN           */
 /* ________________________________*/
 
+
+.container.devise.form {
+	padding: 60px 0;
+	background-image:url('/assets/backgrounds/background_devise_forms.jpg');
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 20% 40% 10% 60%;
+    background-size:cover;
+    width: 100%;
+}
+
+.container.profile.form {
+	padding: 60px 0;
+	background-image:url('/assets/backgrounds/background_profile_forms.jpg');
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 20% 40% 10% 60%;
+    background-size:cover;
+    width: 100%;
+}
+
 form {
 	padding: 50px;
 	border: 2px solid $orange;
-	text-align: center;
+	position: relative;
+	left: 0%;
+	background: rgba(255,255,255,.3);
 
 	h2 {
 		text-align: center;
-		font-weight: bold;
+		font-weight: 300;
+		padding-bottom:30px;
 	}
 
 	label {
@@ -32,5 +56,24 @@ form {
 		color: #fff;
 		padding: 8px 12px 8px 12px;
 		margin-top: 20px;
+	}
+
+	#form-button {
+		text-align:center;
+	}
+
+	.form-group {
+		label {
+			padding-top:10px;
+		}
+	}
+
+	#error_explanation {
+		color: #e74c3c;
+
+		h2 {
+			font-size: 22px;
+			padding-bottom: 0;
+		}
 	}
 } 

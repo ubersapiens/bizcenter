@@ -19,14 +19,21 @@
 
 body {
 	font-family: $main-font;
+	font-weight: 300;
+}
+
+#homepage-nav {
+	background-color: #20202F;
 }
 
 .navbar-default {
 	color: $orange;
-	background-color:#fff;
-	border-color:#fff;
+	background-color: #20202F;
+	border-color:#20202F;
+	padding: 10px 0;
 
 	.navbar-brand {
+		margin-left: -20px;
 		img {
 			margin-top: -40px;
 			height: auto;
@@ -37,16 +44,29 @@ body {
 
 	.navbar-right {
 		padding-top: 13px;
+		padding-right: 40px;
 	}
 
 	.navbar-nav {
 		li {
+			padding: 0px 10px;
+			margin: 0px 3px;
+			
 			a {
-				color: $gray;
+				color: #fff;
 				font-size:16px;
 			}
 			a:hover {
-				color: $orange;
+				color: #fff;
+				font-weight: bold;
+			}
+			.dropdown-menu {
+				a {
+					color: $gray;
+				}
+			}
+			.dropdown-toggle {
+				color: #fff;
 			}
 			#btn-nav {
 				font-family: $main-font;
@@ -67,6 +87,45 @@ footer {
 	text-align: center;
 	font-size: 15px;
 	padding: 10px 0 6px 0;
+}
+
+.bottom.footer {
+	background-color: #20202F;
+	padding-left: 40px;
+	padding-right: 50px;
+	a { 
+		color: #fff;
+	}
+	a:hover {
+		background-color: #20202F;
+		font-weight: bold; 
+	}
+	p {
+		color: #fff;
+		padding-top: 15px;
+		padding-right: 7px;
+	}
+
+	#twitter-icon {
+		height:26px;
+		width: auto;
+		margin-top:-5px;
+	}
+	#fbook-icon {
+		height:35px;
+		width: auto;
+		margin-top:-12px;
+	}
+	#google-icon {
+		height:32px;
+		width: auto;
+		margin-top:-6px;
+	}
+	#linkedin-icon {
+		height:31px;
+		width: auto;
+		margin-top:-7px;
+	}
 }
 
 #map-canvas {
