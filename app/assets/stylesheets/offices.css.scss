@@ -2,12 +2,39 @@
 
 /*_________________________________*/
 /*                                 */
-/*             IMAGES              */
+/*               SHOW              */
+/* ________________________________*/
+.container.office.profile {
+	padding-top:20px;
+	background-color: lightgray;
+
+	#office_main_image {
+		padding-top: 10px;
+		width: 100%;
+	}
+
+	#title_of_offer {
+		background-color: $orange;
+
+		h1 {
+			font-family: "Lato", sans-serif;
+			font-weight: 900;
+		}
+
+		.col-lg-4 {
+			padding: 18px 0 10px 0;
+		}
+	}
+
+}
+
+
+
+/*_________________________________*/
+/*                                 */
+/*               NEW               */
 /* ________________________________*/
 
-#office_main_image {
-	width: 100%;
-}
 
 .container.office.form {
 	padding: 60px 0;
@@ -18,6 +45,11 @@
     background-size:cover;
     width: 100%;
 }
+
+/*_________________________________*/
+/*                                 */
+/*              INDEX              */
+/* ________________________________*/
 
 .container.office.listings {
 	padding: 60px 0;
