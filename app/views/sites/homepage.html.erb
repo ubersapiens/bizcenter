@@ -32,28 +32,19 @@
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="sr-only" for="location">Location</label>
-                          <input type="text" class="form-control" id="location" placeholder="Addresse ?">
+                          <input id="geolocation" type="text" class="form-control" placeholder="Addresse">
                         </div>
                       </div>
-                      <div class="col-md-2">
+                      <div class="col-md-3">
                         <div class="form-group">
                           <label class="sr-only" for="checkin">Check in</label>
                           <div class="input-group">
-                            <input type="text" class="form-control" id="checkin" placeholder="Check in">
+                            <input type="date" class="form-control" id="checkin" placeholder="Check in">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-2">
-                        <div class="form-group">
-                          <label class="sr-only" for="checkout">Check out</label>
-                          <div class="input-group">
-                            <input type="text" class="form-control" id="checkout" placeholder="Check out">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-2">
+                      <div class="col-md-3">
                         <div class="form-group">
                           <label class="sr-only" for="guest">Guest</label>
                           <select id="guest" name="guest" class="form-control">
@@ -200,5 +191,12 @@
         $('.carousel').carousel({
             interval: 3000
         });
+
+        $("#geolocation")
+          .geocomplete()
+          .bind("geocode:result", function(event, result){
+            console.log(result);
+          });
+
     });
 </script>
