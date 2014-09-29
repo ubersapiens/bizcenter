@@ -1,6 +1,11 @@
 class OfficesController < ApplicationController
     def index
-        @offices = current_user.offices
+          if params[:search].present?
+            @offices = current_user.offices.near(params[:search], 10, :order => 'distance')
+          else
+            @offices = current_user.offices
+          end
+        
 
         respond_to do |format|
             format.html
