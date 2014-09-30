@@ -31,7 +31,7 @@
                     <div class="col-md-12">
                         <%= form_tag offices_path, :method => :get do %>
                           <p>
-                            <%= text_field_tag :search, params[:search], :placeholder => 'Addresse ou Zip code' %>
+                            <%= text_field_tag :search, params[:search], :placeholder => 'Addresse ou Zip code', :id => "geolocation" %>
                             <%= submit_tag "Recherche", :name => nil, :class =>"btn btn-default btn-primary" %>
                           </p>
                         <% end %>
