@@ -1,9 +1,11 @@
 class OfficesController < ApplicationController
     def index
           if params[:search].present?
-            @offices = current_user.offices.near(params[:search], 10, :order => 'distance')
+            @offices = Office.all.near(params[:search], 10, :order => 'distance')
+          elsif current_user
+            @offices = current_user.offices  
           else
-            @offices = current_user.offices
+            @offices = Office.all
           end
         
 
@@ -14,7 +16,7 @@ class OfficesController < ApplicationController
     end
 
     def new
-        @office = current_user.offices.build
+        @office = Office.new
 
         respond_to do |format|
             format.html
@@ -37,7 +39,7 @@ class OfficesController < ApplicationController
     end
 
     def show
-        @office = current_user.offices.find(params[:id])
+        @office = Office.find(params[:id])
 
         respond_to do |format|
             format.html
