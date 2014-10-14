@@ -26,7 +26,7 @@ o18 = Office.create({ title_of_offer: 'Espace Omega', full_street_address: '110 
 o19 = Office.create({ title_of_offer: 'Le Cardinal', full_street_address: '45 Rue du Cardinal Lemoine, 75005, Paris', meters_squared: 15, cost_per_month: 1300 })
 o20 = Office.create({ title_of_offer: 'REGUS', full_street_address: '140 bis Rue de Rennes, 75006, Paris', meters_squared: 15, cost_per_month: 2000 })
 
-u1 = User.create({ email: 'test@hotmail.com', first_name: 'Test', password: '12345678'})
+u1 = User.create({ email: 'test@hotmail.com', first_name: 'Test', password: '12345678', admin: true})
 
 
 
