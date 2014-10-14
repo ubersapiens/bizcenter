@@ -1,7 +1,7 @@
 class OfficesController < ApplicationController
     def index
           if params[:search].present?
-            @offices = Office.all.near(params[:search], 10, :order => 'distance')
+            @offices = Office.all.near(params[:search], 2, :order => 'distance')
           elsif current_user
             @offices = current_user.offices  
           else
