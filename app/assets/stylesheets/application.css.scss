@@ -55,10 +55,11 @@ body {
 			a {
 				color: #fff;
 				font-size:16px;
+				border: 1px solid white;
 			}
 			a:hover {
 				color: #fff;
-				font-weight: bold;
+				border: 1px solid $orange;
 			}
 			.dropdown-menu {
 				a {
@@ -93,8 +94,8 @@ footer {
 		color: #fff;
 	}
 	a:hover {
+		color: $orange;
 		background-color: #20202F;
-		font-weight: bold; 
 	}
 	p {
 		color: #fff;

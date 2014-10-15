@@ -52,6 +52,7 @@ a.carousel-control.right, a.carousel-control.left {
     form {
         background: rgba(255,255,255,.5);
         padding-bottom: 75px;
+        border-radius: 0%;
 
         input#geolocation {
             float:left;
@@ -138,7 +139,9 @@ a.carousel-control.right, a.carousel-control.left {
         opacity: 0.4;
     }
 
-
+    div.col-lg-12 {
+        padding: 0 5px;
+    }
 
     span.text-content {
       cursor: pointer;
@@ -243,5 +246,48 @@ a.carousel-control.right, a.carousel-control.left {
             }
         }
     }
+}
+
+/*_________________________________*/
+/*                                 */
+/*              FAQ                */
+/* ________________________________*/
+
+.container.faq {
+    background-color: #f9f9f9;
+    margin: 0px;
+    width: 100%;
+    padding:20px 0 40px 0;
+
+    h2 {
+        text-align:center;
+    }
+
+    p {
+        text-align:justify;
+        font-size: 20px;
+    }
+
+}
+
+/*_________________________________*/
+/*                                 */
+/*          HOW IT WORKS           */
+/* ________________________________*/
+
+.container.how-it-works {
+    background-color: #f9f9f9;
+    margin: 0px;
+    width: 100%;
+    padding:20px 0 40px 0;
+
+    h2 {
+        padding-top: 30px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
 }
 
