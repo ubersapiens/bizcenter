@@ -12,4 +12,7 @@ class SitesController < ApplicationController
   		
   	end
   	
+  	def mentions_legales
+  		
+  	end
 end

@@ -10,4 +10,6 @@ Rails.application.routes.draw do
 
 	get '/faq', to: 'sites#faq'
 
+	get '/mentions_legales', to: 'sites#mentions_legales'
+
 end
