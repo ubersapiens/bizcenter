@@ -1,9 +1,7 @@
 class OfficesController < ApplicationController
     def index
           if params[:search].present?
-            @offices = Office.all.near(params[:search], 2, :order => 'distance')
-          elsif current_user
-            @offices = current_user.offices  
+            @offices = Office.all.near(params[:search], 5, :order => 'distance')
           else
             @offices = Office.all
           end
@@ -12,6 +10,14 @@ class OfficesController < ApplicationController
         respond_to do |format|
             format.html
             format.json { render json: @offices }
+        end
+    end
+
+    def my_offices
+        if current_user
+            @offices = current_user.offices  
+        else
+            @offices = Office.all
         end
     end
 
