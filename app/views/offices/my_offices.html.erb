@@ -11,7 +11,9 @@
 		            	<h2><%= link_to o.title_of_offer, office_path(o), :id => "office_listing_image"%></h2><br>
 		            	<%= o.full_street_address %><br>
 		            	</i> <%= o.meters_squared %> m²<br>
-		            	<%= o.cost_per_month.to_i %> <i class="fa fa-euro"></i>
+		            	<%= o.cost_per_month.to_i %> <i class="fa fa-euro"></i><br>
+		            	<%= link_to 'Edit', edit_office_path(o) %>
+		            	<%= link_to 'Delete', o, :method => :delete, :confirm => 'Sure?'%>
 					</div>
 				</div>
 			</li>

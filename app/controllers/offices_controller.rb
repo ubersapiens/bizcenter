@@ -78,12 +78,16 @@ class OfficesController < ApplicationController
 
     def destroy
         @office = current_user.offices.find(params[:id])
-
         @office.destroy
 
         respond_to do |format|
-            format.html { redirect_to_office_url }
-            format.json { head :no_content }
+            if current_user.offices.empty?
+                format.html { render action: 'new' }
+                format.json { head :no_content }
+            else 
+                format.html { redirect_to my_offices_path }
+                format.json { head :no_content }
+            end
         end
     end
 
