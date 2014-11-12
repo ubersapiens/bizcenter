@@ -5,16 +5,24 @@
 /*               SHOW              */
 /* ________________________________*/
 .container.office.profile {
-	padding-top:20px;
-	background-color: lightgray;
+	width:100%;
+	padding-left:0px;
+	padding-right:0px;
 
 	#office_main_image {
 		padding-top: 10px;
 		width: 100%;
+		height:400px;
+	}
+
+	ul {
+		list-style:none;
 	}
 
 	#map-canvas {
-		margin-top:20px;
+		margin-top:10px;
+		width:100%;
+		height: 395px;
 	}
 
 	#title_of_offer {
@@ -62,11 +70,14 @@
 /* ________________________________*/
 
 .container.office.listings {
+	width:100%;
 	padding-top:20px;
-	background-color: lightgray;
+	padding-left: 0px;
+	padding-right: 0px;
 
 	#office_listing_image {
 		width: 100%;
+		height:120px;
 	}
 
 	ul {
@@ -74,18 +85,18 @@
 	}
 
 	#office_list {
-		padding: 20px 20px;
 		margin-left: -50px;
-		background-color: white;
-		margin-top: 10px;
-		font-size:18px;
-		font-weight: 33;
+		padding-bottom:10px
 	}
 
 	#office_listing_title {
 		h2 {
 			font-family: "Lato", sans-serif;
 			font-weight: 900;
+			padding:0px;
+			margin-top:0px;
+			margin-bottom:0px;
+			font-size:20px;
 		}
 	}
 

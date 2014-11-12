@@ -114,7 +114,7 @@
                             </div>
                         </div>
                         <div class="col-lg-2">
-                            <div class="form-group">
+                            <div class="form-group" style="width:120%;">
                                 <%= f.label "Accès handicapés" %> <br />
                                 <%= f.check_box :handicap_access %> <br />
                             </div>
@@ -193,18 +193,6 @@
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
-                                <%= f.label "Rangements individuels" %> <br />
-                                <%= f.check_box :individual_cupboard %> <br />
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <%= f.label "Rangements individuels" %> <br />
-                                <%= f.check_box :individual_cupboard %> <br />
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
                                 <%= f.label "Scanner" %> <br />
                                 <%= f.check_box :scanner %> <br />
                             </div>
@@ -229,26 +217,20 @@
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
-                                <%= f.label "Assistante partagée" %> <br />
-                                <%= f.check_box :shared_assistant %> <br />
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
                                 <%= f.label "Domiciliation" %> <br />
                                 <%= f.check_box :domiciliation %> <br />
                             </div>
                         </div>
                         <div class="col-lg-2">
-                            <div class="form-group">
-                                <%= f.label "Parking gratuit" %> <br />
-                                <%= f.check_box :free_parking %> <br />
+                            <div class="form-group" style="width:140%;">
+                                <%= f.label "Rangements individuels" %> <br />
+                                <%= f.check_box :individual_cupboard %> <br />
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
-                                <%= f.label "Parking payant" %> <br />
-                                <%= f.check_box :paid_parking %> <br />
+                                <%= f.label "Assistante partagée" %> <br />
+                                <%= f.check_box :shared_assistant %> <br />
                             </div>
                         </div>
                         <div class="col-lg-2">
@@ -277,6 +259,24 @@
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
+                                <%= f.label "Entrée indépendante" %> <br />
+                                <%= f.check_box :independent_entrance %> <br />
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <%= f.label "Parking gratuit" %> <br />
+                                <%= f.check_box :free_parking %> <br />
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <%= f.label "Parking payant" %> <br />
+                                <%= f.check_box :paid_parking %> <br />
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
                                 <%= f.label "Accès 24/7" %> <br />
                                 <%= f.check_box :access_24_7 %> <br />
                             </div>
@@ -299,14 +299,10 @@
                                 <%= f.check_box :lockers %> <br />
                             </div>
                         </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <%= f.label "Entrée indépendante" %> <br />
-                                <%= f.check_box :independent_entrance %> <br />
-                            </div>
-                        </div>
                     </div>
-
+                    <div class="form-group">
+                        <%= f.text_field :company_name, autofocus: true, :placeholder => "Nom de la boite" %>
+                    </div>
                     <div class="form-group">
                         <%= f.label "Vous êtes" %>
                         <%= f.select(:type_of_company, options_for_select(Office::TYPE_OF_COMPANIES.map.with_index { |name, index| [ name, index ] } )) %>

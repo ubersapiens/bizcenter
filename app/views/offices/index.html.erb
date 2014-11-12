@@ -1,26 +1,32 @@
 <div class="container office listings">
-   <div class="container-fluid">
+  <div class="container-fluid">
    	<div class="row">	
-   		<div class="col-lg-12">
-				<ul>
-					<% @offices.each do |o| %>
-		        <li>
-		        	<div class="row" id="office_list">
-		            <div class="col-lg-4">
-		            	<%= image_tag o.image_url.to_s, :id => "office_listing_image" %>
-		            </div>
-		            <div class="col-lg-6">
-		            	<h2><%= link_to o.title_of_offer, office_path(o), :id => "office_listing_image"%></h2><br>
-		            	<%= o.full_street_address %><br>
-		            	</i> <%= o.meters_squared %> m²<br>
-		            	<%= o.cost_per_month.to_i %> <i class="fa fa-euro"></i>
+   		<div class="col-lg-6">
+   			<div class="col-lg-12">
+					<ul>
+						<% @offices.each do |o| %>
+			        <li>
+			        	<div class="row" id="office_list">
+			            <div class="col-lg-4">
+			            	<%= image_tag o.image_url.to_s, :id => "office_listing_image" %>
+			            </div>
+			            <div class="col-lg-6">
+			            	<h2 style="margin-top:0px;margin-bottom:0px;font-size:20px;"><%= link_to o.title_of_offer, office_path(o), :id => "office_listing_image"%></h2><br>
+			            	<%= o.full_street_address %><br>
+			            	</i> <%= o.meters_squared %> m²<br>
+			            	<%= o.cost_per_month.to_i %> <i class="fa fa-euro"></i>
+									</div>
 								</div>
-							</div>
-						</li>
-					<% end %>
-				</ul>
-			</div>
-<!-- 			<div class="col-lg-6">
-			</div> -->
+							</li>
+						<% end %>
+					</ul>
+				</div>
+   		</div>
+   		<div class="col-lg-6">
+   			<div class="col-lg-12">
+   				MAP
+   			</div>
+   		</div>
+		</div>
 	</div>
 </div>
