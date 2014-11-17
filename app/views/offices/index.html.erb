@@ -2,31 +2,72 @@
   <div class="container-fluid">
    	<div class="row">	
    		<div class="col-lg-6">
-   			<div class="col-lg-12">
-					<ul>
-						<% @offices.each do |o| %>
-			        <li>
-			        	<div class="row" id="office_list">
-			            <div class="col-lg-4">
-			            	<%= image_tag o.image_url.to_s, :id => "office_listing_image" %>
-			            </div>
-			            <div class="col-lg-6">
-			            	<h2 style="margin-top:0px;margin-bottom:0px;font-size:20px;"><%= link_to o.title_of_offer, office_path(o), :id => "office_listing_image"%></h2><br>
-			            	<%= o.full_street_address %><br>
-			            	</i> <%= o.meters_squared %> m²<br>
-			            	<%= o.cost_per_month.to_i %> <i class="fa fa-euro"></i>
-									</div>
-								</div>
-							</li>
-						<% end %>
-					</ul>
-				</div>
+        <row>
+     			<div class="col-lg-12">
+  					<ul>
+  						<% @offices.each do |o| %>
+  			        <li>
+  			        	<div class="row" id="office_list">
+  			            <div class="col-lg-4">
+  			            	<%= image_tag o.image_url.to_s, :id => "office_listing_image" %>
+  			            </div>
+  			            <div class="col-lg-6">
+  			            	<h2 style="margin-top:0px;margin-bottom:0px;font-size:20px;"><%= link_to o.title_of_offer, office_path(o), :id => "office_listing_image"%></h2><br>
+  			            	<%= o.full_street_address %><br>
+  			            	</i> <%= o.meters_squared %> m²<br>
+  			            	<%= o.cost_per_month.to_i %> <i class="fa fa-euro"></i>
+  									</div>
+  								</div>
+  							</li>
+  						<% end %>
+  					</ul>
+  				</div>
+        </row>
    		</div>
    		<div class="col-lg-6">
-   			<div class="col-lg-12">
-   				MAP
-   			</div>
+        <row>
+     			<div class="col-lg-12">
+     				<div id="map-canvas" style="width:650px;height:600px;position:fixed !important;">
+            </div>
+     			</div>
+        </row>
    		</div>
 		</div>
 	</div>
 </div>
+<script>
+
+        $(function() {
+          
+          var mapOptions = {
+                center: new google.maps.LatLng(48.8567, 2.3508),
+                zoom: 12,
+                disableDefaultUI: true,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+              };
+              
+              var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+            $.getJSON('/offices.json', function(data) {
+              $.each(data, function(index, value) {
+              
+              var markerLatLng = new google.maps.LatLng(data[index].latitude, data[index].longitude);
+              var image = '/assets/icons/map-icon.png';
+                var marker = new google.maps.Marker({
+                    position: markerLatLng,
+                    icon: image,
+                  map: map,
+                    title: data[index].full_street_address
+                });
+
+                var contentString = '<h4>' + data[index].full_street_address.toString() + '</h4>';
+                // console.log(data[index].full_street_address.toString())
+
+                google.maps.event.addListener(marker, 'click', function() {
+                  infowindow.setContent(contentString);
+                  infowindow.open(map,marker);
+                });
+              });
+            });
+        });
+      </script>
