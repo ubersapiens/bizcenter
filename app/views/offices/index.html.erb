@@ -37,37 +37,37 @@
 </div>
 <script>
 
-        $(function() {
-          
-          var mapOptions = {
-                center: new google.maps.LatLng(48.8567, 2.3508),
-                zoom: 12,
-                disableDefaultUI: true,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-              };
-              
-              var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+  $(function() {
+    
+    var mapOptions = {
+          center: new google.maps.LatLng(48.8567, 2.3508),
+          zoom: 12,
+          disableDefaultUI: true,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-            $.getJSON('/offices.json', function(data) {
-              $.each(data, function(index, value) {
-              
-              var markerLatLng = new google.maps.LatLng(data[index].latitude, data[index].longitude);
-              var image = '/assets/icons/map-icon.png';
-                var marker = new google.maps.Marker({
-                    position: markerLatLng,
-                    icon: image,
-                  map: map,
-                    title: data[index].full_street_address
-                });
+      $.getJSON('/offices.json', function(data) {
+        $.each(data, function(index, value) {
+        
+        var markerLatLng = new google.maps.LatLng(data[index].latitude, data[index].longitude);
+        var image = '/assets/icons/map-icon.png';
+          var marker = new google.maps.Marker({
+              position: markerLatLng,
+              icon: image,
+            map: map,
+              title: data[index].full_street_address
+          });
 
-                var contentString = '<h4>' + data[index].full_street_address.toString() + '</h4>';
-                // console.log(data[index].full_street_address.toString())
+          var contentString = '<h4>' + data[index].full_street_address.toString() + '</h4>';
+          // console.log(data[index].full_street_address.toString())
 
-                google.maps.event.addListener(marker, 'click', function() {
-                  infowindow.setContent(contentString);
-                  infowindow.open(map,marker);
-                });
-              });
-            });
+          google.maps.event.addListener(marker, 'click', function() {
+            infowindow.setContent(contentString);
+            infowindow.open(map,marker);
+          });
         });
-      </script>
+      });
+  });
+</script>
