@@ -15,15 +15,20 @@
                     </div>
 
                     <div class="form-group">
-                        <%= f.text_field :meters_squared, autofocus: true, :placeholder => "Surface (m²)" %>
+                        <%= f.label "Surface" %>
+                        <%= f.text_field :meters_squared, autofocus: true, :style => "width:20%;" %>
+                        jusque <%= f.text_field :other_meters_squared, autofocus: true, :style => "width:20%;" %> m²
                     </div>
 
                     <div class="form-group">
-                        <%= f.text_field :number_of_people, autofocus: true, :placeholder => "Nombre des personnes" %>
+                        <%= f.label "Nombre des personnes" %>
+                        <%= f.text_field :number_of_people, autofocus: true, :style => "width:15%;" %>
                     </div>
 
                     <div class="form-group">
-                        <%= f.text_field :cost_per_month, autofocus: true, :placeholder => "Tarif mensuel" %>
+                        <%= f.label "Tarif mensuel" %>
+                        <%= f.text_field :cost_per_month, autofocus: true, :style => "width:20%;" %> 
+                        jusque <%= f.text_field :other_cost_per_month, autofocus: true, :style => "width:20%;" %> <i class="fa fa-eur"></i>
                     </div>
 
                     <div class="form-group">
@@ -31,7 +36,8 @@
                     </div>
 
                     <div class="form-group">
-                        <%= f.text_field :entry_fee, autofocus: true, :placeholder => "Frais d'entreé" %>
+                        <%= f.label "Frais d'entreé" %>
+                        <%= f.text_field :entry_fee, autofocus: true, :style => "width:20%;" %> <i class="fa fa-eur"></i>
                     </div>
 
                     <div class="form-group">
@@ -46,7 +52,7 @@
 
                     <div class="form-group">
                         <%= f.label "Disponible à partir du" %>
-                        <%= f.date_field :availability %>
+                        <%= f.date_field :availability, :style => "width:18%;" %>
                     </div>
 
                     <div class="form-group">
@@ -60,7 +66,8 @@
                     </div>
 
                     <div class="form-group">
-                        <%= f.text_field :floor_number, autofocus: true, :placeholder => "Etage dans l'immeuble (rdc='0')" %>
+                        <%= f.label "Etage dans l'immeuble (rdc='0')" %>
+                        <%= f.text_field :floor_number, autofocus: true, :style => "width:20%;" %>
                     </div>
 
                     <div class="form-group">

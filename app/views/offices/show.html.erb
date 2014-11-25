@@ -6,8 +6,8 @@
 				<p><%= @office.full_street_address %></p>
 		  </div>
 		  <div class="col-lg-4">
-				<p><%= @office.cost_per_month.to_i  %> <i class="fa fa-eur"> par mois</i></p>
-				<p><%= @office.meters_squared.to_i %> m² disponibles!</p>
+				<p><%= @office.cost_per_month.to_i  %> a <%= @office.other_cost_per_month.to_i  %> <i class="fa fa-eur"> par mois</i></p>
+				<p><%= @office.meters_squared.to_i %> a <%= @office.other_meters_squared.to_i %> m² disponibles!</p>
 				<p><i class="fa fa-users"></i> <%= @office.number_of_people %> places pour vous</p>
 		  </div>
 		</div>
