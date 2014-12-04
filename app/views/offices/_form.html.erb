@@ -16,8 +16,8 @@
 
                     <div class="form-group">
                         <%= f.label "Surface" %>
-                        <%= f.text_field :meters_squared, autofocus: true, :style => "width:20%;" %>
-                        jusque <%= f.text_field :other_meters_squared, autofocus: true, :style => "width:20%;" %> m²
+                        <%= f.text_field :surface_min, autofocus: true, :style => "width:20%;" %>
+                        jusque <%= f.text_field :surface_max, autofocus: true, :style => "width:20%;" %> m²
                     </div>
 
                     <div class="form-group">
@@ -27,8 +27,8 @@
 
                     <div class="form-group">
                         <%= f.label "Tarif mensuel" %>
-                        <%= f.text_field :cost_per_month, autofocus: true, :style => "width:20%;" %> 
-                        jusque <%= f.text_field :other_cost_per_month, autofocus: true, :style => "width:20%;" %> <i class="fa fa-eur"></i>
+                        <%= f.text_field :price_min, autofocus: true, :style => "width:20%;" %> 
+                        jusque <%= f.text_field :price_max, autofocus: true, :style => "width:20%;" %> <i class="fa fa-eur"></i>
                     </div>
 
                     <div class="form-group">

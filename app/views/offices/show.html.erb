@@ -1,13 +1,13 @@
 <div class="container office profile">
   <div class="container-fluid">
     <div class="row" id="title_of_offer">
-      <div class="col-lg-8" style="padding-left:50px;">
+      <div class="col-lg-8" style="background-color:#e67e22;padding-left:50px;padding-bottom:20px;">
 				<h1><%= @office.title_of_offer %></h1>
 				<p><%= @office.full_street_address %></p>
 		  </div>
-		  <div class="col-lg-4">
-				<p><%= @office.cost_per_month.to_i  %> a <%= @office.other_cost_per_month.to_i  %> <i class="fa fa-eur"> par mois</i></p>
-				<p><%= @office.meters_squared.to_i %> a <%= @office.other_meters_squared.to_i %> m² disponibles!</p>
+		  <div class="col-lg-4" style="padding-left:50px; padding-top:20px;padding-bottom:10px;">
+				<p><%= @office.price_min.to_i  %> a <%= @office.price_max.to_i  %> <i class="fa fa-eur"> par mois</i></p>
+				<p><%= @office.surface_min.to_i %> a <%= @office.surface_max.to_i %> m² disponibles!</p>
 				<p><i class="fa fa-users"></i> <%= @office.number_of_people %> places pour vous</p>
 		  </div>
 		</div>
@@ -366,3 +366,5 @@
 		</div>
 	</div>
 </div>
+<%= render 'layouts/footer2' %> 
+<%= render 'layouts/footer' %> 

@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141124151923) do
+ActiveRecord::Schema.define(version: 20141204152508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "offices", force: true do |t|
     t.string   "title_of_offer"
-    t.float    "meters_squared"
-    t.float    "cost_per_month"
+    t.float    "surface_min"
+    t.float    "price_min"
     t.integer  "number_of_people"
     t.string   "full_street_address"
     t.datetime "created_at"
@@ -84,8 +84,8 @@ ActiveRecord::Schema.define(version: 20141124151923) do
     t.string   "company_description"
     t.float    "latitude"
     t.float    "longitude"
-    t.float    "other_cost_per_month"
-    t.float    "other_meters_squared"
+    t.float    "price_max"
+    t.float    "surface_max"
   end
 
   create_table "users", force: true do |t|

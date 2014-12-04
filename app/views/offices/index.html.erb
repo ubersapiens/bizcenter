@@ -3,8 +3,8 @@
    	<div class="row">
       <div class="col-lg-6">
         <div class="row">
-          <div class="col-lg-12">
-            <div id="map-canvas" style="width:650px;height:600px;position:fixed !important;">
+          <div class="col-lg-12" style="padding-left:0px;">
+            <div id="map-canvas" style="width:690px;height:670px;position:fixed !important;">
             </div>
           </div>
         </div>
@@ -12,23 +12,27 @@
    		<div class="col-lg-6" style="position:fixed;overflow-y:scroll;right:0;top:124px;bottom:0;">
         <div class="row">
      			<div class="col-lg-12">
+            <%= will_paginate @offices, renderer: BootstrapPagination::Rails %>
   					<ul>
   						<% @offices.each do |o| %>
   			        <li>
+                  <%= link_to office_path(o) do %>
   			        	<div class="row" id="office_list">
   			            <div class="col-lg-4">
   			            	<%= image_tag o.image_url.to_s, :id => "office_listing_image" %>
   			            </div>
   			            <div class="col-lg-6">
-  			            	<h2 style="margin-top:0px;margin-bottom:0px;font-size:20px;"><%= link_to o.title_of_offer, office_path(o), :id => "office_listing_image"%></h2><br>
+  			            	<h2 style="margin-top:0px;margin-bottom:0px;font-size:20px;"><%= o.title_of_offer%></h2><br>
   			            	<%= o.full_street_address %><br>
-  			            	<%= o.meters_squared.to_i %> a <%= o.other_meters_squared.to_i %> m²<br>
-  			            	<%= o.cost_per_month.to_i %> jusque <%= o.other_cost_per_month.to_i %> <i class="fa fa-euro"></i>
+  			            	<%= o.surface_min.to_i %> a <%= o.surface_max.to_i %> m²<br>
+  			            	<%= o.price_min.to_i %> jusque <%= o.price_max.to_i %> <i class="fa fa-euro"></i>
   									</div>
   								</div>
+                  <% end %>
   							</li>
   						<% end %>
   					</ul>
+            <%= will_paginate @offices, renderer: BootstrapPagination::Rails %>
   				</div>
         </div>
    		</div>
@@ -41,7 +45,7 @@
     
     var mapOptions = {
           center: new google.maps.LatLng(48.8567, 2.3508),
-          zoom: 12,
+          zoom: 14,
           disableDefaultUI: true,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
