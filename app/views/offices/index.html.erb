@@ -4,14 +4,29 @@
       <div class="col-lg-6">
         <div class="row">
           <div class="col-lg-12" style="padding-left:0px;">
-            <div id="map-canvas" style="width:690px;height:670px;position:fixed !important;">
+            <div id="map-canvas" style="width:100%;height:700px;">
             </div>
           </div>
         </div>
       </div>	
+
    		<div class="col-lg-6" style="position:fixed;overflow-y:scroll;right:0;top:124px;bottom:0;">
         <div class="row">
      			<div class="col-lg-12">
+            <%= search_form_for @search do |f| %>
+              <div class="field">
+                <%= f.label :price_min_gteq, "Prix entre" %>
+                <%= f.text_field :price_min_gteq %>
+                <%= f.label :price_max_lteq, "et" %>
+                <%= f.text_field :price_max_lteq %>
+                <br>
+                <%= f.label :surface_min_gteq, "Surface entre" %>
+                <%= f.text_field :surface_min_gteq %>
+                <%= f.label :surface_max_lteq, "et" %>
+                <%= f.text_field :surface_max_lteq %>
+              </div>
+              <div class="actions"><%= f.submit "Search" , :class => "btn btn-default btn-primary" %></div>
+            <% end %>
             <%= will_paginate @offices, renderer: BootstrapPagination::Rails %>
   					<ul>
   						<% @offices.each do |o| %>
@@ -40,38 +55,33 @@
 	</div>
 </div>
 <script>
-
   $(function() {
     
     var mapOptions = {
-          center: new google.maps.LatLng(48.8567, 2.3508),
-          zoom: 14,
-          disableDefaultUI: true,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        
-        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+      zoom: 14,
+      disableDefaultUI: false,
+      scrollwheel: false,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+       
+    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-      $.getJSON('/offices.json', function(data) {
-        $.each(data, function(index, value) {
-        
-        var markerLatLng = new google.maps.LatLng(data[index].latitude, data[index].longitude);
+    var bounds  = new google.maps.LatLngBounds();
+    $.getJSON('/offices.json', { page: <%= @page || 1 %>, search: '<%= @city %>' }, function(data) {
+      $.each(data, function(index, office) {
+        var latlng = new google.maps.LatLng(office.latitude, office.longitude);
+        var markerLatLng = new google.maps.LatLng(office.latitude, office.longitude);
         var image = '/assets/icons/map-icon.png';
-          var marker = new google.maps.Marker({
-              position: markerLatLng,
-              icon: image,
+
+        bounds.extend(latlng);
+        var marker = new google.maps.Marker({
+            position: markerLatLng,
+            icon: image,
             map: map,
-              title: data[index].full_street_address
-          });
-
-          var contentString = '<h4>' + data[index].full_street_address.toString() + '</h4>';
-          // console.log(data[index].full_street_address.toString())
-
-          google.maps.event.addListener(marker, 'click', function() {
-            infowindow.setContent(contentString);
-            infowindow.open(map,marker);
-          });
+            title: office.full_street_address
         });
       });
+      map.fitBounds(bounds);
+    });
   });
 </script>

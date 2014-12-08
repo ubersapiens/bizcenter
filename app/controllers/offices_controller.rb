@@ -1,16 +1,22 @@
 class OfficesController < ApplicationController
+    
     def index
-          if params[:search].present?
-            @offices = Office.all.near(params[:search], 5, :order => 'distance').paginate(:page => params[:page], :per_page => 10)
-          else
-            @offices = Office.all.paginate(:page => params[:page], :per_page => 10)
-          end
-        
+        @search = Office.search(params[:q])
+        @page = params[:page]
+        @city = params[:search]
 
-        respond_to do |format|
-            format.html
-            format.json { render json: @offices }
+        if params[:search].present?
+          @offices = Office.all.near(params[:search], 5, :order => 'distance').paginate(:page => params[:page], :per_page => 10)
+        elsif params[:q].present?
+          @offices = @search.result.paginate(:page => params[:page], :per_page => 10)
+        else
+          @offices = Office.all.paginate(:page => params[:page], :per_page => 10)
         end
+
+      respond_to do |format|
+          format.html
+          format.json { render json: @offices }
+      end
     end
 
     def my_offices

@@ -22,8 +22,9 @@
 				            
 				            var mapOptions = {
 				              center: new google.maps.LatLng(<%= @office.latitude %>, <%= @office.longitude %>),
-				              zoom: 12,
-				              disableDefaultUI: true,
+				              zoom: 14,
+				              disableDefaultUI: false,
+          						scrollwheel: false,
 				              mapTypeId: google.maps.MapTypeId.ROADMAP
 				            };
 				            
@@ -109,255 +110,255 @@
 					<ul>
 						<p style="font-size:20px;font-weight:bold;padding-bottom: 15px;padding-left:15px;text-align:center;">Tous les services <span style="color: #2ecc71;">disponibles</span> dans ce Centre d'Affaires!</p>
 						<div class="col-lg-2">
-							<% if @office.server_access? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-hdd-o fa-2x"></i><br>Accès serveur</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-hdd-o fa-2x"></i><br>Accès serveur</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.adsl? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-paper-plane fa-2x"></i><br>ADSL</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-paper-plane fa-2x"></i><br>ADSL</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.rj45_cable? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-rocket fa-2x"></i><br>RJ45</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-rocket fa-2x"></i><br>RJ45</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.fibre_optic? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-space-shuttle fa-2x"></i><br>Fibre</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-space-shuttle fa-2x"></i><br>Fibre</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.wifi? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-wifi fa-2x"></i><br>WiFi</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-wifi fa-2x"></i><br>WiFi</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
 							<% if @office.handicap_access? %>
 								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-wheelchair fa-2x"></i><br>Accès handicapés</li>
 							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-wheelchair fa-2x"></i><br>Accès handicapés</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.air_conditioning? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-cube fa-2x"></i><br>Climatisation</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-cube fa-2x"></i><br>Climatisation</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.cafeteria? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-cutlery fa-2x"></i><br>Cafétéria</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-cutlery fa-2x"></i><br>Cafétéria</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.kitchen? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-lemon-o fa-2x"></i><br>Kitchen</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-lemon-o fa-2x"></i><br>Kitchen</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.waiting_room? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-circle-o fa-2x"></i><br>Espace d'attente</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-circle-o fa-2x"></i><br>Espace d'attente</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.relaxation_room? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-circle fa-2x"></i><br>Espace détente</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-circle fa-2x"></i><br>Espace détente</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.cleaning_services? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-refresh fa-2x"></i><br>Ménage</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-refresh fa-2x"></i><br>Ménage</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.eating_room? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-coffee fa-2x"></i><br>Salle à manger</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-coffee fa-2x"></i><br>Salle à manger</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.storage? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-briefcase fa-2x"></i><br>Coin stockage</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-briefcase fa-2x"></i><br>Coin stockage</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.television? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-desktop fa-2x"></i><br>Ecran TV</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-desktop fa-2x"></i><br>Ecran TV</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.fax? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-fax fa-2x"></i><br>Fax</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-fax fa-2x"></i><br>Fax</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.copy_machine? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-print fa-2x"></i><br>Photocopieur</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-print fa-2x"></i><br>Photocopieur</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.individual_cupboard? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-archive fa-2x"></i><br>Rangements</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-archive fa-2x"></i><br>Rangements</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.scanner? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-file fa-2x"></i><br>Scanner</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-file fa-2x"></i><br>Scanner</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.tables_and_chairs? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-home fa-2x"></i><br>Tables/chaisses</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-home fa-2x"></i><br>Tables/chaisses</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.telephone? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-phone fa-2x"></i><br>Téléphone</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-phone fa-2x"></i><br>Téléphone</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.projector? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-youtube-play fa-2x"></i><br>Vidéoprojecteur</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-youtube-play fa-2x"></i><br>Vidéoprojecteur</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.shared_assistant? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-male fa-2x"></i><br>Assistante partagée</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-male fa-2x"></i><br>Assistante partagée</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.domiciliation? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-truck fa-2x"></i><br>Domiciliation</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-truck fa-2x"></i><br>Domicialiation</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.free_parking? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-car fa-2x"></i><br>Parking gratuit</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-car fa-2x"></i><br>Parking gratuit</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.paid_parking? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-taxi fa-2x"></i><br>Parking payant</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-taxi fa-2x"></i><br>Parking payant</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.mail_reception? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-envelope fa-2x"></i><br>Réception courrier</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-envelope fa-2x"></i><br>Réception courrier</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.receptionist? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-female fa-2x"></i><br>Réceptionniste</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-female fa-2x"></i><br>Réceptionniste</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.shared_meeting_room? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-circle-thin fa-2x"></i><br>Salle partagée</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-circle-thin fa-2x"></i><br>Salle partagée</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.paid_meeting_room? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-circle fa-2x"></i><br>Salle payante</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-circle fa-2x"></i><br>Salle payante</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.private_meeting_room? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-circle-o fa-2x"></i><br>Salle privée</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-circle-o fa-2x"></i><br>Salle privée</li>
-							<% end %>
-						</div>
-						<div class="col-lg-2">
-							<% if @office.access_24_7? %>
-								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-key fa-2x"></i><br>Accès 24/7</li>
-							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-key fa-2x"></i><br>Accès 24/7</li>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-wheelchair fa-2x"></i><br>Accès handicapés</li>
 							<% end %>
 						</div>
 						<div class="col-lg-2">
 							<% if @office.badge_access? %>
 								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-tag fa-2x"></i><br>Accès par badge</li>
 							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-tag fa-2x"></i><br>Accès par badge</li>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-tag fa-2x"></i><br>Accès par badge</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.server_access? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-hdd-o fa-2x"></i><br>Accès serveur</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-hdd-o fa-2x"></i><br>Accès serveur</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.access_24_7? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-key fa-2x"></i><br>Accès 24/7</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-key fa-2x"></i><br>Accès 24/7</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.adsl? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-paper-plane fa-2x"></i><br>ADSL</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-paper-plane fa-2x"></i><br>ADSL</li>
 							<% end %>
 						</div>
 						<div class="col-lg-2">
 							<% if @office.alarm? %>
 								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-bell fa-2x"></i><br>Alarme</li>
 							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-bell fa-2x"></i><br>Alarme</li>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-bell fa-2x"></i><br>Alarme</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.shared_assistant? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-male fa-2x"></i><br>Assistante partagée</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-male fa-2x"></i><br>Assistante partagée</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.cafeteria? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-cutlery fa-2x"></i><br>Cafétéria</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-cutlery fa-2x"></i><br>Cafétéria</li>
 							<% end %>
 						</div>
 						<div class="col-lg-2">
 							<% if @office.lockers? %>
 								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-database fa-2x"></i><br>Casier fermé</li>
 							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-database fa-2x"></i><br>Casier fermé</li>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-database fa-2x"></i><br>Casier fermé</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.air_conditioning? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-cube fa-2x"></i><br>Climatisation</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-cube fa-2x"></i><br>Climatisation</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.storage? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-briefcase fa-2x"></i><br>Coin stockage</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-briefcase fa-2x"></i><br>Coin stockage</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.kitchen? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-lemon-o fa-2x"></i><br>Cuisine</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-lemon-o fa-2x"></i><br>Cuisine</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.domiciliation? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-truck fa-2x"></i><br>Domiciliation</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-truck fa-2x"></i><br>Domicialiation</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.television? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-desktop fa-2x"></i><br>Ecran TV</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-desktop fa-2x"></i><br>Ecran TV</li>
 							<% end %>
 						</div>
 						<div class="col-lg-2">
 							<% if @office.independent_entrance? %>
 								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-institution fa-2x"></i><br>Entrée privée</li>
 							<% else %>
-								<li style="text-align:center;color:#333333;"><i class="fa fa-institution fa-2x"></i><br>Entrée privée</li>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-institution fa-2x"></i><br>Entrée privée</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.waiting_room? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-circle-o fa-2x"></i><br>Espace d'attente</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-circle-o fa-2x"></i><br>Espace d'attente</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.relaxation_room? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-circle fa-2x"></i><br>Espace détente</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-circle fa-2x"></i><br>Espace détente</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.fax? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-fax fa-2x"></i><br>Fax</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-fax fa-2x"></i><br>Fax</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.fibre_optic? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-space-shuttle fa-2x"></i><br>Fibre</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-space-shuttle fa-2x"></i><br>Fibre</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.cleaning_services? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-refresh fa-2x"></i><br>Ménage</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-refresh fa-2x"></i><br>Ménage</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.free_parking? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-car fa-2x"></i><br>Parking gratuit</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-car fa-2x"></i><br>Parking gratuit</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.paid_parking? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-taxi fa-2x"></i><br>Parking payant</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-taxi fa-2x"></i><br>Parking payant</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.copy_machine? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-print fa-2x"></i><br>Photocopieur</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-print fa-2x"></i><br>Photocopieur</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.individual_cupboard? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-archive fa-2x"></i><br>Rangements</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-archive fa-2x"></i><br>Rangements</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.mail_reception? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-envelope fa-2x"></i><br>Réception courrier</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-envelope fa-2x"></i><br>Réception courrier</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.receptionist? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-female fa-2x"></i><br>Réceptionniste</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-female fa-2x"></i><br>Réceptionniste</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.rj45_cable? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-rocket fa-2x"></i><br>RJ45</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-rocket fa-2x"></i><br>RJ45</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.eating_room? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-coffee fa-2x"></i><br>Salle à manger</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-coffee fa-2x"></i><br>Salle à manger</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.shared_meeting_room? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-circle-thin fa-2x"></i><br>Salle partagée</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-circle-thin fa-2x"></i><br>Salle partagée</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.paid_meeting_room? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-circle fa-2x"></i><br>Salle payante</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-circle fa-2x"></i><br>Salle payante</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.private_meeting_room? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-circle-o fa-2x"></i><br>Salle privée</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-circle-o fa-2x"></i><br>Salle privée</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.scanner? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-file fa-2x"></i><br>Scanner</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-file fa-2x"></i><br>Scanner</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.tables_and_chairs? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-home fa-2x"></i><br>Tables/chaisses</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-home fa-2x"></i><br>Tables/chaisses</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.telephone? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-phone fa-2x"></i><br>Téléphone</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-phone fa-2x"></i><br>Téléphone</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.projector? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-youtube-play fa-2x"></i><br>Vidéoprojecteur</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-youtube-play fa-2x"></i><br>Vidéoprojecteur</li>
+							<% end %>
+						</div>
+						<div class="col-lg-2">
+							<% if @office.wifi? %>
+								<li style="text-align:center;color:#2ecc71;"><i class="fa fa-wifi fa-2x"></i><br>WiFi</li>
+							<% else %>
+								<li style="text-align:center;color:#606569;"><i class="fa fa-wifi fa-2x"></i><br>WiFi</li>
 							<% end %>
 						</div>
 					</ul>

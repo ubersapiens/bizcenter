@@ -23,4 +23,11 @@ class Office < ActiveRecord::Base
 	TYPE_OF_COMPANIES = ['Une entreprise', 'Espace de coworking', 'Centre d\'affaires', 'Pépinière ou incubateur', 'Une agence immobilière', 'Autre']
 
 	COMPANY_ACTIVITIES = ['Internet/High Tech', 'Marketing/Communication', 'Comptabilité', 'Conseil', 'Finance', 'Architecte', 'Média/Production', 'Avocats', 'Médical/Para médical', 'Art/Design', 'Distribution/Commerce', 'Journalisme', 'Associations', 'Autre']
+
+def price_range
+	(:price_min.ceil...:price_max.floor)
+end
+
+
+
 end
