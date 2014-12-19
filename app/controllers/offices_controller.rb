@@ -1,14 +1,16 @@
 class OfficesController < ApplicationController
     
     def index
-        @search = Office.search(params[:q])
         @page = params[:page]
         @city = params[:search]
 
-        if params[:search].present?
+        params[:min_price]
+        params[:max_price]
+
+        if !params[:search].blank?
           @offices = Office.all.near(params[:search], 5, :order => 'distance').paginate(:page => params[:page], :per_page => 10)
-        elsif params[:q].present?
-          @offices = @search.result.paginate(:page => params[:page], :per_page => 10)
+        elsif !params[:min_price].blank? && !params[:max_price].blank?
+          @offices = Office.where("price_min >= ? and price_max <= ?", params[:min_price], params[:max_price]).paginate(:page => params[:page], :per_page => 10)
         else
           @offices = Office.all.paginate(:page => params[:page], :per_page => 10)
         end

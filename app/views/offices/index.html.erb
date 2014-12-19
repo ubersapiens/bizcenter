@@ -13,19 +13,16 @@
    		<div class="col-lg-6" style="position:fixed;overflow-y:scroll;right:0;top:124px;bottom:0;">
         <div class="row">
      			<div class="col-lg-12">
-            <%= search_form_for @search do |f| %>
+            <%= form_tag offices_path, :method => :get, :style => 'padding:0px; border:none;' do %>
               <div class="field">
-                <%= f.label :price_min_gteq, "Prix entre" %>
-                <%= f.text_field :price_min_gteq %>
-                <%= f.label :price_max_lteq, "et" %>
-                <%= f.text_field :price_max_lteq %>
+                <%= text_field_tag :min_price, params[:min_price], :placeholder => 'Prix (min)', :style => 'width:30%;' %>
+                <%= text_field_tag :max_price, params[:max_price], :placeholder => 'Prix (max)', :style => 'width:30%;' %>
                 <br>
-                <%= f.label :surface_min_gteq, "Surface entre" %>
-                <%= f.text_field :surface_min_gteq %>
-                <%= f.label :surface_max_lteq, "et" %>
-                <%= f.text_field :surface_max_lteq %>
+                <%= text_field_tag :min_price, params[:min_price], :placeholder => 'Surface (min)', :style => 'width:30%; margin-top:10px;' %>
+                <%= text_field_tag :max_price, params[:max_price], :placeholder => 'Surface (max)', :style => 'width:30%;' %>
+                <br>
+                <%= submit_tag "Recherche",  :class =>"btn btn-default btn-primary", :style => 'width:20%;background-color:#e67e22; border:none;margin-top:10px;' %>
               </div>
-              <div class="actions"><%= f.submit "Search" , :class => "btn btn-default btn-primary" %></div>
             <% end %>
             <%= will_paginate @offices, renderer: BootstrapPagination::Rails %>
   					<ul>

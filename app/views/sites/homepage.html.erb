@@ -16,8 +16,8 @@
                 </div>
             </div>
 
-            <a class="left carousel-control" href="#homecarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-            <a class="right carousel-control" href="#homecarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+            <a class="left carousel-control" href="#homecarousel" role="button" data-slide="prev"></a>
+            <a class="right carousel-control" href="#homecarousel" role="button" data-slide="next"></a>
             <div class="search">
                 <div class="container">
                   <div class="row">
@@ -25,7 +25,7 @@
                       <div class="form-section">
                         <div class="row">
                             <div class="col-md-12" style="width:110%;">
-                                <%= form_tag offices_path, :method => :get do %>
+                                <%= form_tag offices_path, :id => 'geolocate_form', :method => :get do %>
                                 <h1>Trouvez un<br>centre d'affaires</h1>
                                   <p>
                                     <%= text_field_tag :search, params[:search], :placeholder => 'Addresse ou Zip code', :id => "geolocation" %>
@@ -175,10 +175,18 @@
         });
 
         $("#geolocation")
-          .geocomplete()
-          .bind("geocode:result", function(event, result){
-            console.log(result);
-          });
-
+            .geocomplete()
+            .bind("geocode:result", function(event, result){
+        });
+        $("#geolocate_form input").keypress(function (e) {
+            if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
+                $('input[type=submit]').click();
+                return false;
+            } else {
+                return true;
+            }
+        });
     });
 </script>
+
+
