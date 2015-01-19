@@ -12,7 +12,7 @@ class OfficesController < ApplicationController
         elsif !params[:min_price].blank? && !params[:max_price].blank?
           @offices = Office.where("price_min >= ? and price_max <= ?", params[:min_price], params[:max_price]).paginate(:page => params[:page], :per_page => 10)
         else
-          @offices = Office.all.paginate(:page => params[:page], :per_page => 10)
+          @offices = Office.all.paginate(:page => params[:page], :per_page => 20)
         end
 
       respond_to do |format|

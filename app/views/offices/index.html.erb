@@ -50,15 +50,24 @@
             <div id="slider-range-min2"></div>
             <br><br><br>
   						<% @offices.each do |o| %>
-              <div class="col-lg-6">
+              <div class="col-lg-6" id="listing_hover">
                 <%= link_to office_path(o) do %>
                 <div class="row" id="office_image">
                   <%= image_tag o.image_url.to_s, :id => "office_listing_image" %>
   	            </div>
                 <div class="row" id="office_info">
-                  <%= o.full_street_address %>
-                  <%= o.surface_min.to_i %> a <%= o.surface_max.to_i %> m²<br>
-                  <%= o.price_min.to_i %> jusque <%= o.price_max.to_i %> <i class="fa fa-euro"></i>
+                  <div class="col-lg-12">
+                  <h2><%= o.title_of_offer %><h/>
+                  </div>
+                  <div class="col-lg-12">
+                  <p><%= o.full_street_address %></p>
+                  </div>
+                  <div class="col-lg-6" style="margin-top: -1em;">
+                  <p><%= o.surface_min.to_i %> a <%= o.surface_max.to_i %> m²<br></p>
+                  </div>
+                  <div class="col-lg-6" style="margin-top: -1em;">
+                  <p><%= o.price_min.to_i %> a <%= o.price_max.to_i %> <i class="fa fa-euro"></i></p>
+                  </div>
                 </div>
                 <% end %>
                 </div>
@@ -106,8 +115,8 @@
     $( "#slider-range-min" ).slider({
       range: "min",
       value: 1000,
-      min: 1,
-      max: 2000,
+      min: 500,
+      max: 4000,
       slide: function( event, ui ) {
         $( "#amount" ).val( "€ " + ui.value );
       }
@@ -119,9 +128,9 @@
   $(function() {
     $( "#slider-range-min2" ).slider({
       range: "min",
-      value: 200,
+      value: 50,
       min: 1,
-      max: 1000,
+      max: 200,
       slide: function( event, ui ) {
         $( "#amount2" ).val( ui.value + " m2");
       }
