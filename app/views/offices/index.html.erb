@@ -49,26 +49,20 @@
              
             <div id="slider-range-min2"></div>
             <br><br><br>
-  					<ul>
   						<% @offices.each do |o| %>
-  			        <li>
-                  <%= link_to office_path(o) do %>
-  			        	<div class="row" id="office_list">
-  			            <div class="col-lg-4">
-  			            	<%= image_tag o.image_url.to_s, :id => "office_listing_image" %>
-  			            </div>
-  			            <div class="col-lg-6">
-  			            	<h2 style="margin-top:0px;margin-bottom:0px;font-size:20px;"><%= o.title_of_offer%></h2><br>
-  			            	<%= o.full_street_address %><br>
-  			            	<%= o.surface_min.to_i %> a <%= o.surface_max.to_i %> m²<br>
-  			            	<%= o.price_min.to_i %> jusque <%= o.price_max.to_i %> <i class="fa fa-euro"></i>
-  									</div>
-  								</div>
-                  <br>
-                  <% end %>
-  							</li>
-  						<% end %>
-  					</ul>
+              <div class="col-lg-6">
+                <%= link_to office_path(o) do %>
+                <div class="row" id="office_image">
+                  <%= image_tag o.image_url.to_s, :id => "office_listing_image" %>
+  	            </div>
+                <div class="row" id="office_info">
+                  <%= o.full_street_address %>
+                  <%= o.surface_min.to_i %> a <%= o.surface_max.to_i %> m²<br>
+                  <%= o.price_min.to_i %> jusque <%= o.price_max.to_i %> <i class="fa fa-euro"></i>
+                </div>
+                <% end %>
+                </div>
+  					<% end %>
             <%= will_paginate @offices, renderer: BootstrapPagination::Rails %>
   				</div>
         </div>

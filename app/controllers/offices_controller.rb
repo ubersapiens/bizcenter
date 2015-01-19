@@ -8,7 +8,7 @@ class OfficesController < ApplicationController
         params[:max_price]
 
         if !params[:search].blank?
-          @offices = Office.all.near(params[:search], 5, :order => 'distance').paginate(:page => params[:page], :per_page => 10)
+          @offices = Office.all.near(params[:search], 5, :order => 'distance').paginate(:page => params[:page], :per_page => 20)
         elsif !params[:min_price].blank? && !params[:max_price].blank?
           @offices = Office.where("price_min >= ? and price_max <= ?", params[:min_price], params[:max_price]).paginate(:page => params[:page], :per_page => 10)
         else
