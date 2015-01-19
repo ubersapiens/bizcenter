@@ -18,6 +18,8 @@
 		margin:0px;
 	}
 
+	
+
 	#map-canvas {
 		margin-top:10px;
 		width:100%;
@@ -94,6 +96,12 @@
 	padding-left: 0px;
 	padding-right: 0px;
 
+	#filters_container {
+		.col-lg-6:hover {
+			background-color:#f6931f;
+			color: white;
+		}
+	}
 
 	.office_search {
 		input {

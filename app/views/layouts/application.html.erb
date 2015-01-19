@@ -12,6 +12,7 @@
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/whsr-january-flaticon-set/512/rocket.png">
         <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
         <script src="/assets/geocomplete.js"></script>
         <%= csrf_meta_tag %>
         <%= yield(:head) %>
@@ -19,5 +20,6 @@
     <body>
         <%= render 'layouts/navigation' %>
             <%= yield %>
+        <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> 
     </body>
 </html>
