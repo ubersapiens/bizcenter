@@ -4,9 +4,9 @@
 Office.delete_all
 User.delete_all
 
-o1 = Office.create({ title_of_offer: 'BFI', full_street_address: '149 Rue St. Honoré, 75001, Paris', surface_min: 10, surface_max: 35, price_min: 800, price_max: 1000, image: "http://www.ikoas.com/upfile/goods/eng_gal_3_29.jpg" })
-o2 = Office.create({ title_of_offer: 'REGUS', full_street_address: '27 Avenue de l\'Opera, 75001, Paris', surface_min: 10, surface_max: 15, price_min: 800, price_max: 2100, image: "http://www.ikoas.com/upfile/goods/eng_gal_3_29.jpg" })
-o3 = Office.create({ title_of_offer: 'REGUS', full_street_address: '10 Place de Vendome, 75001, Paris', surface_min: 10, surface_max: 15, price_min: 800, price_max: 2100, image: "http://www.ikoas.com/upfile/goods/eng_gal_3_29.jpg" })
+o1 = Office.create({ title_of_offer: 'BFI', full_street_address: '149 Rue St. Honoré, 75001, Paris', surface_min: 10, surface_max: 35, price_min: 800, price_max: 1000 })
+o2 = Office.create({ title_of_offer: 'REGUS', full_street_address: '27 Avenue de l\'Opera, 75001, Paris', surface_min: 10, surface_max: 15, price_min: 800, price_max: 2100 })
+o3 = Office.create({ title_of_offer: 'REGUS', full_street_address: '10 Place de Vendome, 75001, Paris', surface_min: 10, surface_max: 15, price_min: 800, price_max: 2100 })
 o4 = Office.create({ title_of_offer: 'Buro Club', full_street_address: '5 Rue de Castiglione, 75001, Paris', surface_min: 10, surface_max: 15, price_min: 800, price_max: 1700, image: File.open(Rails.root + "app/assets/images/offices/office_view.png") })
 o5 = Office.create({ title_of_offer: 'Alac Etoile', full_street_address: '3 Avenue de l\'Opera, 75001, Paris', surface_min: 10, surface_max: 15, price_min: 800, price_max: 1500, image: File.open(Rails.root + "app/assets/images/offices/office_view.png") })
 o6 = Office.create({ title_of_offer: 'WARF', full_street_address: '253 Rue St. Honoré, 75001, Paris', surface_min: 10, surface_max: 14, price_min: 800, price_max: 1300, image: File.open(Rails.root + "app/assets/images/offices/office_view.png") })
