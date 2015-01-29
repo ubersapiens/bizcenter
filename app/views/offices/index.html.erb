@@ -82,7 +82,7 @@
             map: map,
             title: office.full_street_address
         });
-        var contentString = '<div id="marker_content">' + '<img id="marker_image" src="' + office.image.url + '">' + '<h4 id="marker_heading">' + office.title_of_offer + '</h4>' + '<p id="marker_address">' + office.full_street_address + '</p>' + '<p id="marker_surface">' + office.surface_min + ' to ' + office.surface_max + '</p>' + '<p id="marker_price">' + office.price_min + ' to ' + office.price_max + '</p>' + '</div>';
+        var contentString = '<div id="marker_content">' + '<img id="marker_image" src="' + office.image.url + '">' + '<h4 id="marker_heading">' + office.title_of_offer + '</h4>' + '<p id="marker_address">' + office.full_street_address + '</p>' + '<p style="float:left;" "id="marker_surface">' + office.surface_min + ' to ' + office.surface_max + ' m²</p>' + '<p style="float:right;"id="marker_price">' + office.price_min + ' to ' + office.price_max + ' €</p>' + '</div>';
 
         google.maps.event.addListener(marker, 'click', function() {
           infowindow.setContent(contentString);
