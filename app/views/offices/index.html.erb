@@ -1,41 +1,9 @@
 <div class="container office listings">
   <div class="container-fluid">
    	<div class="row">
-      <div class="col-lg-5">
-        <div class="row">
-          <div class="col-lg-12" style="padding-left:0px;">
-            <div id="map-canvas" style="width:100%;height:700px;">
-            </div>
-          </div>
-        </div>
-      </div>	
-
-   		<div class="col-lg-7" style="position:fixed;overflow-y:scroll;right:0;top:124px;bottom:0;">
+   		<div class="col-lg-7" style="position:fixed;overflow-y:scroll;left:0;top:124px;bottom:0;">
         <div class="row">
      			<div class="col-lg-12">
-            <div class="row" id="filters_container" >
-              <a href="#" style="color:#3d3d3d;">
-              <div class="col-lg-6" style="width:32%;height:150px;border: 2px solid #f6931f; padding:1em ;font-size:2em;text-align:center;">
-              
-                <p><i class="fa fa-desktop fa-2x"></i><br>Open space</p>
-              </div>
-              </a>
-              <a href="#" style="color:#3d3d3d;">
-              <div class="col-lg-6" style="width:32%;height:150px;border: 2px solid #f6931f;padding: 1em; font-size:2em;text-align:center;">
-              
-                <p><i class="fa fa-cube fa-2x"></i><br>Bureau</p>
-             
-              </div>
-              </a>
-              <a href="#" style="color:#3d3d3d;">
-              <div class="col-lg-6" style="width:32%;height:150px;border: 2px solid #f6931f; padding:1em ;font-size:2em;text-align:center;">
-              
-                <p><i class="fa fa-print fa-2x"></i><br>Reunion</p>
-              </div>
-              </a>
-            </div>
-            <br>
-            <p>
               <label for="amount" style="font-size:1.7em;font-weight:300;">Prix maximum:</label>
               <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-size: 1.7em;font-weight:bold;">
             </p>
@@ -76,6 +44,14 @@
   				</div>
         </div>
    		</div>
+      <div class="col-lg-5" style="float:right;">
+        <div class="row">
+          <div class="col-lg-12" style="padding-right:0px;">
+            <div id="map-canvas">
+            </div>
+          </div>
+        </div>
+      </div>  
 		</div>
 	</div>
 </div>
@@ -90,6 +66,7 @@
     };
        
     var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+    var infowindow = new google.maps.InfoWindow();
 
     var bounds  = new google.maps.LatLngBounds();
     $.getJSON('/offices.json', { page: <%= @page || 1 %>, search: '<%= @city %>' }, function(data) {
@@ -104,6 +81,12 @@
             icon: image,
             map: map,
             title: office.full_street_address
+        });
+        var contentString = '<div id="marker_content">' + '<img id="marker_image" src="' + office.image.url + '">' + '<h4 id="marker_heading">' + office.title_of_offer + '</h4>' + '<p id="marker_address">' + office.full_street_address + '</p>' + '<p id="marker_surface">' + office.surface_min + ' to ' + office.surface_max + '</p>' + '<p id="marker_price">' + office.price_min + ' to ' + office.price_max + '</p>' + '</div>';
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(contentString);
+          infowindow.open(map,marker);
         });
       });
       map.fitBounds(bounds);

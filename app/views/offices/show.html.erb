@@ -59,7 +59,7 @@
 					</div>
 					<div class="col-lg-5">
 						<div class="row">
-							<h3 style="margin-left: 1em;">Services</h3>
+							<h3 style="margin-left: 1em;">Services ( <span style="color:#e67e22">Disponible</span> / <span style="color:#606569;">Indisponible</span> )</h3>
 							<div class="col-lg-2">
 								<% if @office.handicap_access? %>
 									<p style="color:#e67e22;"><i class="fa fa-wheelchair fa-2x"></i><br>Accès<br>handicapés</p>
@@ -127,9 +127,9 @@
 							</div>
 							<div class="col-lg-2">
 								<% if @office.air_conditioning? %>
-									<p style="color:#e67e22;"><i class="fa fa-cube fa-2x"></i><br>Climatisation</p>
+									<p style="color:#e67e22;"><i class="fa fa-cube fa-2x"></i><br><span style="margin-left:-1em;">Climatisation</span></p>
 								<% else %>
-									<p style="color:#606569;"><i class="fa fa-cube fa-2x"></i><br>Climatisation</p>
+									<p style="color:#606569;"><i class="fa fa-cube fa-2x"></i><br><span style="margin-left:-1em;">Climatisation</span></p>
 								<% end %>
 							</div>
 						</div>
@@ -150,9 +150,9 @@
 							</div>
 							<div class="col-lg-2">
 								<% if @office.domiciliation? %>
-									<p style="color:#e67e22;"><i class="fa fa-truck fa-2x"></i><br>Domiciliation</p>
+									<p style="color:#e67e22;"><i class="fa fa-truck fa-2x"></i><br><span style="margin-left:-1em;">Domiciliation</span></p>
 								<% else %>
-									<p style="color:#606569;"><i class="fa fa-truck fa-2x"></i><br>Domicialiation</p>
+									<p style="color:#606569;"><i class="fa fa-truck fa-2x"></i><br><span style="margin-left:-1em;">Domicialiation</span></p>
 								<% end %>
 							</div>
 							<div class="col-lg-2">
@@ -210,16 +210,16 @@
 						<div class="row">	
 							<div class="col-lg-2">
 								<% if @office.copy_machine? %>
-									<p style="color:#e67e22;"><i class="fa fa-print fa-2x"></i><br>Photocopieur</p>
+									<p style="color:#e67e22;"><i class="fa fa-print fa-2x"></i><br><span style="margin-left:-1em;">Photocopieur</span></p>
 								<% else %>
-									<p style="color:#606569;"><i class="fa fa-print fa-2x"></i><br>Photocopieur</p>
+									<p style="color:#606569;"><i class="fa fa-print fa-2x"></i><br><span style="margin-left:-1em;">Photocopieur</span></p>
 								<% end %>
 							</div>
 							<div class="col-lg-2">
 								<% if @office.individual_cupboard? %>
-									<p style="color:#e67e22;"><i class="fa fa-archive fa-2x"></i><br>Rangements</p>
+									<p style="color:#e67e22;"><i class="fa fa-archive fa-2x"></i><br><span style="margin-left:-1em;">Rangements</span></p>
 								<% else %>
-									<p style="color:#606569;"><i class="fa fa-archive fa-2x"></i><br>Rangements</p>
+									<p style="color:#606569;"><i class="fa fa-archive fa-2x"></i><br><span style="margin-left:-1em;">Rangements</span></p>
 								<% end %>
 							</div>
 							<div class="col-lg-2">
@@ -231,9 +231,9 @@
 							</div>
 							<div class="col-lg-2">
 								<% if @office.receptionist? %>
-									<p style="color:#e67e22;"><i class="fa fa-female fa-2x"></i><br>Réceptionniste</p>
+									<p style="color:#e67e22;"><i class="fa fa-female fa-2x"></i><br><span style="margin-left:-1em;">Réceptionniste</span></p>
 								<% else %>
-									<p style="color:#606569;"><i class="fa fa-female fa-2x"></i><br>Réceptionniste</p>
+									<p style="color:#606569;"><i class="fa fa-female fa-2x"></i><br><span style="margin-left:-1em;">Réceptionniste</span></p>
 								<% end %>
 							</div>
 							<div class="col-lg-2">
@@ -254,9 +254,9 @@
 							</div>
 							<div class="col-lg-2">
 								<% if @office.tables_and_chairs? %>
-									<p style="color:#e67e22;"><i class="fa fa-home fa-2x"></i><br>Tables/<br>Chaisses</p>
+									<p style="color:#e67e22;"><i class="fa fa-home fa-2x"></i><br>Tables<br>Chaisses</p>
 								<% else %>
-									<p style="color:#606569;"><i class="fa fa-home fa-2x"></i><br>Tables/chaisses</p>
+									<p style="color:#606569;"><i class="fa fa-home fa-2x"></i><br>Tables<br>Chaisses</p>
 								<% end %>
 							</div>
 							<div class="col-lg-2">
@@ -268,9 +268,9 @@
 							</div>
 							<div class="col-lg-2">
 								<% if @office.projector? %>
-									<p style="color:#e67e22;"><i class="fa fa-youtube-play fa-2x"></i><br>Vidéoprojecteur</p>
+									<p style="color:#e67e22;"><i class="fa fa-youtube-play fa-2x"></i><br><span style="margin-left:-1em;">Vidéoprojecteur</span></p>
 								<% else %>
-									<p style="color:#606569;"><i class="fa fa-youtube-play fa-2x"></i><br>Vidéoprojecteur</p>
+									<p style="color:#606569;"><i class="fa fa-youtube-play fa-2x"></i><br><span style="margin-left:-1em;">Vidéoprojecteur</span></p>
 								<% end %>
 							</div>
 							<div class="col-lg-2">
