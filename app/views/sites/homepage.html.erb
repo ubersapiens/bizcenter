@@ -1,3 +1,23 @@
+<script>
+    $(function(){
+        $('.carousel').carousel({
+            interval: 3000
+        });
+
+        $("#geolocation")
+            .geocomplete()
+            .bind("geocode:result", function(event, result){
+        });
+        $("#geolocate_form input").keypress(function (e) {
+            if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
+                $('input[type=submit]').click();
+                return false;
+            } else {
+                return true;
+            }
+        });
+    });
+</script>
 <div class="container-fluid">
     <div class="row">
         <div id="homecarousel" class="carousel slide">
@@ -167,26 +187,5 @@
 </div>
 <%= render 'layouts/footer2' %> 
 <%= render 'layouts/footer' %> 
-
-<script>
-    $(function(){
-        $('.carousel').carousel({
-            interval: 3000
-        });
-
-        $("#geolocation")
-            .geocomplete()
-            .bind("geocode:result", function(event, result){
-        });
-        $("#geolocate_form input").keypress(function (e) {
-            if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
-                $('input[type=submit]').click();
-                return false;
-            } else {
-                return true;
-            }
-        });
-    });
-</script>
 
 
