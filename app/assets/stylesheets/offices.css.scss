@@ -10,6 +10,9 @@
 	#office_main_image {
 		width: 100%;
 		height:450px;
+		background-repeat: no-repeat;
+		background-image: url('http://2.bp.blogspot.com/-btym3Pf50w8/T6-JIK023ZI/AAAAAAAAEHc/ItrUp6PH8ow/s1600/loft+office.jpg');
+		background-size: cover;
 	}
 
 	ul {
@@ -166,9 +169,13 @@
 			font-size:18px;
 		}
 	}
+
+	#marker_content {
+		min-width: 300px;
+	}
 	#marker_image {
 		width:100%;
-		height:175px;
+		height: 200px;
 		background-image: url('http://www.sascha-kletzsch.info/klein_projekte/k_office2.jpg');
 	}
 

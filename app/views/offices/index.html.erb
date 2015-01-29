@@ -66,10 +66,8 @@
     };
        
     var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-    var infowindow = new google.maps.InfoWindow({
-        maxWidth: 350
-    });
-
+    var infowindow = new google.maps.InfoWindow();
+    
     var bounds  = new google.maps.LatLngBounds();
     $.getJSON('/offices.json', { page: <%= @page || 1 %>, search: '<%= @city %>' }, function(data) {
       $.each(data, function(index, office) {
