@@ -357,7 +357,7 @@
 				            var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 				            var infowindow = new google.maps.InfoWindow();
 
-				            $.getJSON('/offices.json', function(data) {
+				            $.getJSON('/spaces.json', function(data) {
 				                $.each(data, function(index, value) {
 				                    
 				                    var markerLatLng = new google.maps.LatLng(<%= @office.latitude %>, <%= @office.longitude %>);
@@ -367,13 +367,6 @@
 				                        icon: image,
 				                        map: map,
 				                    });
-
-				                    // var contentString = '<h4>' + data[index].full_street_address.toString() + '</h4>';
-
-				                    // google.maps.event.addListener(marker, 'click', function() {
-				                    //     infowindow.setContent(contentString);
-				                    //     infowindow.open(map,marker);
-				                    // });
 				                });
 				            });
 				        });

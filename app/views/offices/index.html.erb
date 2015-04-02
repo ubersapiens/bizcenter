@@ -4,20 +4,7 @@
    		<div class="col-lg-7" style="position:fixed;overflow-y:scroll;left:0;top:124px;bottom:0;">
         <div class="row">
      			<div class="col-lg-12">
-              <label for="amount" style="font-size:1.7em;font-weight:300;">Prix maximum:</label>
-              <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-size: 1.7em;font-weight:bold;">
-            </p>
-             
-            <div id="slider-range-min"></div>
-            <br>
-            <p>
-              <label for="amount2" style="font-size:1.7em;font-weight:300;">Surface maximum:</label>
-              <input type="text" id="amount2" readonly style="border:0; color:#f6931f; font-size: 1.7em; font-weight:bold;">
-            </p>
-             
-            <div id="slider-range-min2"></div>
-            <br><br><br>
-  						<% @offices.each do |o| %>
+ 						<% @offices.each do |o| %>
               <div class="col-lg-6" id="listing_hover">
                 <%= link_to office_path(o) do %>
                 <div class="row" id="office_image">
@@ -91,33 +78,5 @@
       });
       map.fitBounds(bounds);
     });
-  });
-</script>
-<script>
-  $(function() {
-    $( "#slider-range-min" ).slider({
-      range: "min",
-      value: 1000,
-      min: 500,
-      max: 4000,
-      slide: function( event, ui ) {
-        $( "#amount" ).val( "€ " + ui.value );
-      }
-    });
-    $( "#amount" ).val( "€ " + $( "#slider-range-min" ).slider( "value" ) );
-  });
-</script>
-<script>
-  $(function() {
-    $( "#slider-range-min2" ).slider({
-      range: "min",
-      value: 50,
-      min: 1,
-      max: 200,
-      slide: function( event, ui ) {
-        $( "#amount2" ).val( ui.value + " m2");
-      }
-    });
-    $( "#amount2" ).val( "" + $( "#slider-range-min2" ).slider( "value" ) + " m2" );
   });
 </script>
